@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             Uploadmodel = new GroupBox();
-            imagelabel = new Label();
-            namelabel = new Label();
-            Heightlabel = new Label();
-            chestbustlabel = new Label();
-            waistlabel = new Label();
-            hipslabel = new Label();
-            Shoeslabel = new Label();
-            Eyeslabel = new Label();
-            Booklabel = new Label();
-            Digitallabel = new Label();
-            Videolabel = new Label();
-            İnstagramlabel = new Label();
-            Uploadbutton = new Button();
-            Nametext = new TextBox();
-            imagebutton = new Button();
-            Bookbutton = new Button();
-            Digitalbutton = new Button();
-            Videobutton = new Button();
-            Heighttext = new TextBox();
-            Chestbusttext = new TextBox();
-            waisttext = new TextBox();
-            Hipstext = new TextBox();
-            Shoestext = new TextBox();
-            Eyestext = new TextBox();
             İnstagramtext = new TextBox();
+            Eyestext = new TextBox();
+            Shoestext = new TextBox();
+            Hipstext = new TextBox();
+            waisttext = new TextBox();
+            Chestbusttext = new TextBox();
+            Heighttext = new TextBox();
+            Videobutton = new Button();
+            Digitalbutton = new Button();
+            Bookbutton = new Button();
+            imagebutton = new Button();
+            Nametext = new TextBox();
+            Uploadbutton = new Button();
+            İnstagramlabel = new Label();
+            Videolabel = new Label();
+            Digitallabel = new Label();
+            Booklabel = new Label();
+            Eyeslabel = new Label();
+            Shoeslabel = new Label();
+            hipslabel = new Label();
+            waistlabel = new Label();
+            chestbustlabel = new Label();
+            Heightlabel = new Label();
+            namelabel = new Label();
+            imagelabel = new Label();
             Models = new GroupBox();
             Searcher = new TextBox();
             Uploadmodel.SuspendLayout();
@@ -87,122 +87,121 @@
             Uploadmodel.Controls.Add(Heightlabel);
             Uploadmodel.Controls.Add(namelabel);
             Uploadmodel.Controls.Add(imagelabel);
-            Uploadmodel.Location = new Point(108, 12);
+            Uploadmodel.Location = new Point(12, 12);
             Uploadmodel.Name = "Uploadmodel";
-            Uploadmodel.Size = new Size(1163, 360);
+            Uploadmodel.Size = new Size(1087, 360);
             Uploadmodel.TabIndex = 0;
             Uploadmodel.TabStop = false;
             Uploadmodel.Text = "New Model";
             // 
-            // imagelabel
+            // İnstagramtext
             // 
-            imagelabel.AutoSize = true;
-            imagelabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            imagelabel.Location = new Point(49, 23);
-            imagelabel.Name = "imagelabel";
-            imagelabel.Size = new Size(75, 28);
-            imagelabel.TabIndex = 0;
-            imagelabel.Text = "İmage :";
+            İnstagramtext.Location = new Point(847, 195);
+            İnstagramtext.Name = "İnstagramtext";
+            İnstagramtext.Size = new Size(191, 27);
+            İnstagramtext.TabIndex = 12;
+            İnstagramtext.Text = "Model İnstagram";
             // 
-            // namelabel
+            // Eyestext
             // 
-            namelabel.AutoSize = true;
-            namelabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            namelabel.Location = new Point(51, 74);
-            namelabel.Name = "namelabel";
-            namelabel.Size = new Size(73, 28);
-            namelabel.TabIndex = 1;
-            namelabel.Text = "Name :";
+            Eyestext.Location = new Point(474, 304);
+            Eyestext.Name = "Eyestext";
+            Eyestext.Size = new Size(191, 27);
+            Eyestext.TabIndex = 12;
+            Eyestext.Text = "Model Eyes";
             // 
-            // Heightlabel
+            // Shoestext
             // 
-            Heightlabel.AutoSize = true;
-            Heightlabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Heightlabel.Location = new Point(388, 23);
-            Heightlabel.Name = "Heightlabel";
-            Heightlabel.Size = new Size(80, 28);
-            Heightlabel.TabIndex = 2;
-            Heightlabel.Text = "Height :";
+            Shoestext.Location = new Point(474, 250);
+            Shoestext.Name = "Shoestext";
+            Shoestext.Size = new Size(191, 27);
+            Shoestext.TabIndex = 17;
+            Shoestext.Text = "Model Shoes";
             // 
-            // chestbustlabel
+            // Hipstext
             // 
-            chestbustlabel.AutoSize = true;
-            chestbustlabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            chestbustlabel.Location = new Point(344, 74);
-            chestbustlabel.Name = "chestbustlabel";
-            chestbustlabel.Size = new Size(124, 28);
-            chestbustlabel.TabIndex = 3;
-            chestbustlabel.Text = "Chest / Bust :";
+            Hipstext.Location = new Point(474, 195);
+            Hipstext.Name = "Hipstext";
+            Hipstext.Size = new Size(191, 27);
+            Hipstext.TabIndex = 12;
+            Hipstext.Text = "Model Hips";
             // 
-            // waistlabel
+            // waisttext
             // 
-            waistlabel.AutoSize = true;
-            waistlabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            waistlabel.Location = new Point(399, 135);
-            waistlabel.Name = "waistlabel";
-            waistlabel.Size = new Size(69, 28);
-            waistlabel.TabIndex = 4;
-            waistlabel.Text = "Waist :";
+            waisttext.Location = new Point(474, 138);
+            waisttext.Name = "waisttext";
+            waisttext.Size = new Size(191, 27);
+            waisttext.TabIndex = 12;
+            waisttext.Text = "Model Waist";
             // 
-            // hipslabel
+            // Chestbusttext
             // 
-            hipslabel.AutoSize = true;
-            hipslabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            hipslabel.Location = new Point(408, 191);
-            hipslabel.Name = "hipslabel";
-            hipslabel.Size = new Size(60, 28);
-            hipslabel.TabIndex = 5;
-            hipslabel.Text = "Hips :";
+            Chestbusttext.Location = new Point(474, 80);
+            Chestbusttext.Name = "Chestbusttext";
+            Chestbusttext.Size = new Size(191, 27);
+            Chestbusttext.TabIndex = 16;
+            Chestbusttext.Text = "Model Chest Or Bust";
             // 
-            // Shoeslabel
+            // Heighttext
             // 
-            Shoeslabel.AutoSize = true;
-            Shoeslabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Shoeslabel.Location = new Point(395, 246);
-            Shoeslabel.Name = "Shoeslabel";
-            Shoeslabel.Size = new Size(73, 28);
-            Shoeslabel.TabIndex = 1;
-            Shoeslabel.Text = "Shoes :";
+            Heighttext.Location = new Point(474, 28);
+            Heighttext.Name = "Heighttext";
+            Heighttext.Size = new Size(191, 27);
+            Heighttext.TabIndex = 15;
+            Heighttext.Text = "Model Height";
             // 
-            // Eyeslabel
+            // Videobutton
             // 
-            Eyeslabel.AutoSize = true;
-            Eyeslabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Eyeslabel.Location = new Point(409, 300);
-            Eyeslabel.Name = "Eyeslabel";
-            Eyeslabel.Size = new Size(59, 28);
-            Eyeslabel.TabIndex = 6;
-            Eyeslabel.Text = "Eyes :";
+            Videobutton.Location = new Point(847, 138);
+            Videobutton.Name = "Videobutton";
+            Videobutton.Size = new Size(191, 29);
+            Videobutton.TabIndex = 13;
+            Videobutton.Text = "Select Videos";
+            Videobutton.UseVisualStyleBackColor = true;
             // 
-            // Booklabel
+            // Digitalbutton
             // 
-            Booklabel.AutoSize = true;
-            Booklabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Booklabel.Location = new Point(775, 23);
-            Booklabel.Name = "Booklabel";
-            Booklabel.Size = new Size(66, 28);
-            Booklabel.TabIndex = 7;
-            Booklabel.Text = "Book :";
+            Digitalbutton.Location = new Point(847, 78);
+            Digitalbutton.Name = "Digitalbutton";
+            Digitalbutton.Size = new Size(191, 29);
+            Digitalbutton.TabIndex = 14;
+            Digitalbutton.Text = "Select Digitals";
+            Digitalbutton.UseVisualStyleBackColor = true;
             // 
-            // Digitallabel
+            // Bookbutton
             // 
-            Digitallabel.AutoSize = true;
-            Digitallabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Digitallabel.Location = new Point(762, 74);
-            Digitallabel.Name = "Digitallabel";
-            Digitallabel.Size = new Size(79, 28);
-            Digitallabel.TabIndex = 8;
-            Digitallabel.Text = "Digital :";
+            Bookbutton.Location = new Point(847, 26);
+            Bookbutton.Name = "Bookbutton";
+            Bookbutton.Size = new Size(191, 29);
+            Bookbutton.TabIndex = 13;
+            Bookbutton.Text = "Select Books";
+            Bookbutton.UseVisualStyleBackColor = true;
             // 
-            // Videolabel
+            // imagebutton
             // 
-            Videolabel.AutoSize = true;
-            Videolabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Videolabel.Location = new Point(769, 135);
-            Videolabel.Name = "Videolabel";
-            Videolabel.Size = new Size(72, 28);
-            Videolabel.TabIndex = 9;
-            Videolabel.Text = "Video :";
+            imagebutton.Location = new Point(130, 26);
+            imagebutton.Name = "imagebutton";
+            imagebutton.Size = new Size(191, 29);
+            imagebutton.TabIndex = 12;
+            imagebutton.Text = "Select image";
+            imagebutton.UseVisualStyleBackColor = true;
+            // 
+            // Nametext
+            // 
+            Nametext.Location = new Point(130, 78);
+            Nametext.Name = "Nametext";
+            Nametext.Size = new Size(191, 27);
+            Nametext.TabIndex = 11;
+            Nametext.Text = "Model Name";
+            // 
+            // Uploadbutton
+            // 
+            Uploadbutton.Location = new Point(847, 297);
+            Uploadbutton.Name = "Uploadbutton";
+            Uploadbutton.Size = new Size(191, 41);
+            Uploadbutton.TabIndex = 10;
+            Uploadbutton.Text = "Upload";
+            Uploadbutton.UseVisualStyleBackColor = true;
             // 
             // İnstagramlabel
             // 
@@ -214,121 +213,122 @@
             İnstagramlabel.TabIndex = 1;
             İnstagramlabel.Text = "İnstagram :";
             // 
-            // Uploadbutton
+            // Videolabel
             // 
-            Uploadbutton.Location = new Point(769, 297);
-            Uploadbutton.Name = "Uploadbutton";
-            Uploadbutton.Size = new Size(269, 41);
-            Uploadbutton.TabIndex = 10;
-            Uploadbutton.Text = "Upload";
-            Uploadbutton.UseVisualStyleBackColor = true;
+            Videolabel.AutoSize = true;
+            Videolabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Videolabel.Location = new Point(769, 135);
+            Videolabel.Name = "Videolabel";
+            Videolabel.Size = new Size(72, 28);
+            Videolabel.TabIndex = 9;
+            Videolabel.Text = "Video :";
             // 
-            // Nametext
+            // Digitallabel
             // 
-            Nametext.Location = new Point(130, 78);
-            Nametext.Name = "Nametext";
-            Nametext.Size = new Size(191, 27);
-            Nametext.TabIndex = 11;
-            Nametext.Text = "Model Name";
+            Digitallabel.AutoSize = true;
+            Digitallabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Digitallabel.Location = new Point(762, 74);
+            Digitallabel.Name = "Digitallabel";
+            Digitallabel.Size = new Size(79, 28);
+            Digitallabel.TabIndex = 8;
+            Digitallabel.Text = "Digital :";
             // 
-            // imagebutton
+            // Booklabel
             // 
-            imagebutton.Location = new Point(130, 26);
-            imagebutton.Name = "imagebutton";
-            imagebutton.Size = new Size(191, 29);
-            imagebutton.TabIndex = 12;
-            imagebutton.Text = "Select image";
-            imagebutton.UseVisualStyleBackColor = true;
+            Booklabel.AutoSize = true;
+            Booklabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Booklabel.Location = new Point(775, 23);
+            Booklabel.Name = "Booklabel";
+            Booklabel.Size = new Size(66, 28);
+            Booklabel.TabIndex = 7;
+            Booklabel.Text = "Book :";
             // 
-            // Bookbutton
+            // Eyeslabel
             // 
-            Bookbutton.Location = new Point(847, 26);
-            Bookbutton.Name = "Bookbutton";
-            Bookbutton.Size = new Size(191, 29);
-            Bookbutton.TabIndex = 13;
-            Bookbutton.Text = "Select Books";
-            Bookbutton.UseVisualStyleBackColor = true;
+            Eyeslabel.AutoSize = true;
+            Eyeslabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Eyeslabel.Location = new Point(409, 300);
+            Eyeslabel.Name = "Eyeslabel";
+            Eyeslabel.Size = new Size(59, 28);
+            Eyeslabel.TabIndex = 6;
+            Eyeslabel.Text = "Eyes :";
             // 
-            // Digitalbutton
+            // Shoeslabel
             // 
-            Digitalbutton.Location = new Point(847, 78);
-            Digitalbutton.Name = "Digitalbutton";
-            Digitalbutton.Size = new Size(191, 29);
-            Digitalbutton.TabIndex = 14;
-            Digitalbutton.Text = "Select Digital";
-            Digitalbutton.UseVisualStyleBackColor = true;
+            Shoeslabel.AutoSize = true;
+            Shoeslabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Shoeslabel.Location = new Point(395, 246);
+            Shoeslabel.Name = "Shoeslabel";
+            Shoeslabel.Size = new Size(73, 28);
+            Shoeslabel.TabIndex = 1;
+            Shoeslabel.Text = "Shoes :";
             // 
-            // Videobutton
+            // hipslabel
             // 
-            Videobutton.Location = new Point(847, 138);
-            Videobutton.Name = "Videobutton";
-            Videobutton.Size = new Size(191, 29);
-            Videobutton.TabIndex = 13;
-            Videobutton.Text = "Select Video";
-            Videobutton.UseVisualStyleBackColor = true;
+            hipslabel.AutoSize = true;
+            hipslabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            hipslabel.Location = new Point(408, 191);
+            hipslabel.Name = "hipslabel";
+            hipslabel.Size = new Size(60, 28);
+            hipslabel.TabIndex = 5;
+            hipslabel.Text = "Hips :";
             // 
-            // Heighttext
+            // waistlabel
             // 
-            Heighttext.Location = new Point(474, 28);
-            Heighttext.Name = "Heighttext";
-            Heighttext.Size = new Size(191, 27);
-            Heighttext.TabIndex = 15;
-            Heighttext.Text = "Model Height";
+            waistlabel.AutoSize = true;
+            waistlabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            waistlabel.Location = new Point(399, 135);
+            waistlabel.Name = "waistlabel";
+            waistlabel.Size = new Size(69, 28);
+            waistlabel.TabIndex = 4;
+            waistlabel.Text = "Waist :";
             // 
-            // Chestbusttext
+            // chestbustlabel
             // 
-            Chestbusttext.Location = new Point(474, 80);
-            Chestbusttext.Name = "Chestbusttext";
-            Chestbusttext.Size = new Size(191, 27);
-            Chestbusttext.TabIndex = 16;
-            Chestbusttext.Text = "Model Chest Or Bust";
+            chestbustlabel.AutoSize = true;
+            chestbustlabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            chestbustlabel.Location = new Point(344, 74);
+            chestbustlabel.Name = "chestbustlabel";
+            chestbustlabel.Size = new Size(124, 28);
+            chestbustlabel.TabIndex = 3;
+            chestbustlabel.Text = "Chest / Bust :";
             // 
-            // waisttext
+            // Heightlabel
             // 
-            waisttext.Location = new Point(474, 138);
-            waisttext.Name = "waisttext";
-            waisttext.Size = new Size(191, 27);
-            waisttext.TabIndex = 12;
-            waisttext.Text = "Model Waist";
+            Heightlabel.AutoSize = true;
+            Heightlabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Heightlabel.Location = new Point(388, 23);
+            Heightlabel.Name = "Heightlabel";
+            Heightlabel.Size = new Size(80, 28);
+            Heightlabel.TabIndex = 2;
+            Heightlabel.Text = "Height :";
             // 
-            // Hipstext
+            // namelabel
             // 
-            Hipstext.Location = new Point(474, 195);
-            Hipstext.Name = "Hipstext";
-            Hipstext.Size = new Size(191, 27);
-            Hipstext.TabIndex = 12;
-            Hipstext.Text = "Model Hips";
+            namelabel.AutoSize = true;
+            namelabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            namelabel.Location = new Point(51, 74);
+            namelabel.Name = "namelabel";
+            namelabel.Size = new Size(73, 28);
+            namelabel.TabIndex = 1;
+            namelabel.Text = "Name :";
             // 
-            // Shoestext
+            // imagelabel
             // 
-            Shoestext.Location = new Point(474, 250);
-            Shoestext.Name = "Shoestext";
-            Shoestext.Size = new Size(191, 27);
-            Shoestext.TabIndex = 17;
-            Shoestext.Text = "Model Shoes";
-            // 
-            // Eyestext
-            // 
-            Eyestext.Location = new Point(474, 304);
-            Eyestext.Name = "Eyestext";
-            Eyestext.Size = new Size(191, 27);
-            Eyestext.TabIndex = 12;
-            Eyestext.Text = "Model Eyes";
-            // 
-            // İnstagramtext
-            // 
-            İnstagramtext.Location = new Point(847, 195);
-            İnstagramtext.Name = "İnstagramtext";
-            İnstagramtext.Size = new Size(191, 27);
-            İnstagramtext.TabIndex = 12;
-            İnstagramtext.Text = "Model İnstagram";
+            imagelabel.AutoSize = true;
+            imagelabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            imagelabel.Location = new Point(49, 23);
+            imagelabel.Name = "imagelabel";
+            imagelabel.Size = new Size(75, 28);
+            imagelabel.TabIndex = 0;
+            imagelabel.Text = "İmage :";
             // 
             // Models
             // 
             Models.Controls.Add(Searcher);
-            Models.Location = new Point(108, 378);
+            Models.Location = new Point(12, 378);
             Models.Name = "Models";
-            Models.Size = new Size(1163, 366);
+            Models.Size = new Size(1087, 440);
             Models.TabIndex = 1;
             Models.TabStop = false;
             Models.Text = "Models";
@@ -345,7 +345,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1372, 756);
+            ClientSize = new Size(1114, 830);
             Controls.Add(Models);
             Controls.Add(Uploadmodel);
             Name = "Modeleditorpage";

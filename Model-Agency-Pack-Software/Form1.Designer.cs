@@ -38,7 +38,7 @@
             modeleditor = new Button();
             button2 = new Button();
             button1 = new Button();
-            groupBox1 = new GroupBox();
+            models = new GroupBox();
             modelgroupbox.SuspendLayout();
             SuspendLayout();
             // 
@@ -116,37 +116,37 @@
             // 
             // button2
             // 
-            button2.Location = new Point(1264, 12);
+            button2.Location = new Point(1385, 12);
             button2.Name = "button2";
-            button2.Size = new Size(94, 29);
+            button2.Size = new Size(176, 29);
             button2.TabIndex = 7;
             button2.Text = "Log out";
             button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            button1.Location = new Point(1164, 12);
+            button1.Location = new Point(1203, 12);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(176, 29);
             button1.TabIndex = 6;
             button1.Text = "SignUp";
             button1.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // models
             // 
-            groupBox1.Location = new Point(299, 47);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1059, 590);
-            groupBox1.TabIndex = 8;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            models.Location = new Point(299, 47);
+            models.Name = "models";
+            models.Size = new Size(1262, 590);
+            models.TabIndex = 8;
+            models.TabStop = false;
+            models.Text = "Models";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1370, 649);
-            Controls.Add(groupBox1);
+            ClientSize = new Size(1573, 649);
+            Controls.Add(models);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(modeleditor);
@@ -174,6 +174,6 @@
         private Button modeleditor;
         private Button button2;
         private Button button1;
-        private GroupBox groupBox1;
+        private GroupBox models;
     }
 }
