@@ -62,7 +62,7 @@
             // Selectimagelabel
             // 
             Selectimagelabel.AutoSize = true;
-            Selectimagelabel.Location = new Point(580, 25);
+            Selectimagelabel.Location = new Point(561, 23);
             Selectimagelabel.Name = "Selectimagelabel";
             Selectimagelabel.Size = new Size(201, 20);
             Selectimagelabel.TabIndex = 0;
@@ -70,12 +70,14 @@
             // 
             // Newimagebutton
             // 
-            Newimagebutton.Location = new Point(545, 59);
+            Newimagebutton.BackColor = Color.FromArgb(128, 128, 255);
+            Newimagebutton.FlatStyle = FlatStyle.Flat;
+            Newimagebutton.Location = new Point(545, 62);
             Newimagebutton.Name = "Newimagebutton";
-            Newimagebutton.Size = new Size(256, 29);
+            Newimagebutton.Size = new Size(233, 29);
             Newimagebutton.TabIndex = 1;
             Newimagebutton.Text = "New İmage";
-            Newimagebutton.UseVisualStyleBackColor = true;
+            Newimagebutton.UseVisualStyleBackColor = false;
             // 
             // Namelabel
             // 
@@ -218,12 +220,14 @@
             // 
             // updatebutton
             // 
+            updatebutton.BackColor = Color.LightGreen;
+            updatebutton.FlatStyle = FlatStyle.Flat;
             updatebutton.Location = new Point(461, 222);
             updatebutton.Name = "updatebutton";
             updatebutton.Size = new Size(411, 29);
             updatebutton.TabIndex = 16;
             updatebutton.Text = "Update Features";
-            updatebutton.UseVisualStyleBackColor = true;
+            updatebutton.UseVisualStyleBackColor = false;
             // 
             // bookgroup
             // 
@@ -238,12 +242,14 @@
             // 
             // savebook
             // 
+            savebook.BackColor = Color.LightGreen;
+            savebook.FlatStyle = FlatStyle.Flat;
             savebook.Location = new Point(461, 190);
             savebook.Name = "savebook";
             savebook.Size = new Size(411, 29);
             savebook.TabIndex = 0;
             savebook.Text = "Save";
-            savebook.UseVisualStyleBackColor = true;
+            savebook.UseVisualStyleBackColor = false;
             // 
             // digitalgroup
             // 
@@ -257,12 +263,14 @@
             // 
             // savedigital
             // 
+            savedigital.BackColor = Color.LightGreen;
+            savedigital.FlatStyle = FlatStyle.Flat;
             savedigital.Location = new Point(461, 190);
             savedigital.Name = "savedigital";
             savedigital.Size = new Size(411, 29);
             savedigital.TabIndex = 1;
             savedigital.Text = "Save";
-            savedigital.UseVisualStyleBackColor = true;
+            savedigital.UseVisualStyleBackColor = false;
             // 
             // videogroup
             // 
@@ -276,17 +284,20 @@
             // 
             // savevideo
             // 
+            savevideo.BackColor = Color.LightGreen;
+            savevideo.FlatStyle = FlatStyle.Flat;
             savevideo.Location = new Point(461, 190);
             savevideo.Name = "savevideo";
             savevideo.Size = new Size(411, 29);
             savevideo.TabIndex = 1;
             savevideo.Text = "Save";
-            savevideo.UseVisualStyleBackColor = true;
+            savevideo.UseVisualStyleBackColor = false;
             // 
             // model
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(1335, 1055);
             Controls.Add(videogroup);
             Controls.Add(digitalgroup);
