@@ -153,42 +153,54 @@
             // 
             // Videobutton
             // 
+            Videobutton.BackColor = SystemColors.ActiveCaptionText;
+            Videobutton.FlatAppearance.BorderColor = Color.White;
+            Videobutton.FlatStyle = FlatStyle.Flat;
+            Videobutton.ForeColor = Color.White;
             Videobutton.Location = new Point(847, 138);
             Videobutton.Name = "Videobutton";
             Videobutton.Size = new Size(191, 29);
             Videobutton.TabIndex = 13;
             Videobutton.Text = "Select Videos";
-            Videobutton.UseVisualStyleBackColor = true;
+            Videobutton.UseVisualStyleBackColor = false;
             // 
             // Digitalbutton
             // 
+            Digitalbutton.BackColor = SystemColors.ActiveCaptionText;
+            Digitalbutton.FlatStyle = FlatStyle.Flat;
+            Digitalbutton.ForeColor = Color.White;
             Digitalbutton.Location = new Point(847, 78);
             Digitalbutton.Name = "Digitalbutton";
             Digitalbutton.Size = new Size(191, 29);
             Digitalbutton.TabIndex = 14;
             Digitalbutton.Text = "Select Digitals";
-            Digitalbutton.UseVisualStyleBackColor = true;
+            Digitalbutton.UseVisualStyleBackColor = false;
             // 
             // Bookbutton
             // 
+            Bookbutton.BackColor = SystemColors.ActiveCaptionText;
+            Bookbutton.ForeColor = Color.White;
             Bookbutton.Location = new Point(847, 26);
             Bookbutton.Name = "Bookbutton";
             Bookbutton.Size = new Size(191, 29);
             Bookbutton.TabIndex = 13;
             Bookbutton.Text = "Select Books";
-            Bookbutton.UseVisualStyleBackColor = true;
+            Bookbutton.UseVisualStyleBackColor = false;
             // 
             // imagebutton
             // 
+            imagebutton.BackColor = Color.Black;
+            imagebutton.ForeColor = SystemColors.ButtonFace;
             imagebutton.Location = new Point(130, 26);
             imagebutton.Name = "imagebutton";
             imagebutton.Size = new Size(191, 29);
             imagebutton.TabIndex = 12;
             imagebutton.Text = "Select image";
-            imagebutton.UseVisualStyleBackColor = true;
+            imagebutton.UseVisualStyleBackColor = false;
             // 
             // Nametext
             // 
+            Nametext.Font = new Font("Segoe UI Symbol", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Nametext.Location = new Point(130, 78);
             Nametext.Name = "Nametext";
             Nametext.Size = new Size(191, 27);
@@ -197,12 +209,14 @@
             // 
             // Uploadbutton
             // 
+            Uploadbutton.BackColor = Color.LightGreen;
+            Uploadbutton.FlatStyle = FlatStyle.Flat;
             Uploadbutton.Location = new Point(847, 297);
             Uploadbutton.Name = "Uploadbutton";
             Uploadbutton.Size = new Size(191, 41);
             Uploadbutton.TabIndex = 10;
             Uploadbutton.Text = "Upload";
-            Uploadbutton.UseVisualStyleBackColor = true;
+            Uploadbutton.UseVisualStyleBackColor = false;
             // 
             // İnstagramlabel
             // 
@@ -336,6 +350,7 @@
             // 
             // Searcher
             // 
+            Searcher.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             Searcher.Location = new Point(474, 26);
             Searcher.Name = "Searcher";
             Searcher.Size = new Size(191, 27);
@@ -346,6 +361,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(1114, 830);
             Controls.Add(Models);
             Controls.Add(Uploadmodel);
