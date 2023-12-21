@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Modeleditorpage));
             Uploadmodel = new GroupBox();
             İnstagramtext = new TextBox();
             Eyestext = new TextBox();
@@ -348,6 +349,7 @@
             ClientSize = new Size(1114, 830);
             Controls.Add(Models);
             Controls.Add(Uploadmodel);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Modeleditorpage";
             Text = "Editor Page";
             Uploadmodel.ResumeLayout(false);

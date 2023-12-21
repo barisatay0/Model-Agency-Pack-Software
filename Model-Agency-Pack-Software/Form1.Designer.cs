@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             modelgroupbox = new GroupBox();
             Save = new Button();
             Modellist = new ListBox();
@@ -55,12 +56,20 @@
             // 
             // Save
             // 
+            Save.BackColor = Color.White;
+            Save.FlatAppearance.BorderColor = Color.Black;
+            Save.FlatAppearance.BorderSize = 2;
+            Save.FlatAppearance.MouseDownBackColor = Color.Black;
+            Save.FlatAppearance.MouseOverBackColor = Color.Black;
+            Save.FlatStyle = FlatStyle.Popup;
+            Save.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            Save.ForeColor = SystemColors.ActiveCaptionText;
             Save.Location = new Point(6, 556);
             Save.Name = "Save";
             Save.Size = new Size(253, 29);
             Save.TabIndex = 1;
-            Save.Text = "Save";
-            Save.UseVisualStyleBackColor = true;
+            Save.Text = "Save Selection";
+            Save.UseVisualStyleBackColor = false;
             // 
             // Modellist
             // 
@@ -77,24 +86,33 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(265, 27);
             textBox1.TabIndex = 1;
+            textBox1.Text = "Link Will Be Here";
             // 
             // SelectAll
             // 
+            SelectAll.BackColor = Color.Lime;
+            SelectAll.FlatAppearance.BorderColor = Color.Black;
+            SelectAll.FlatStyle = FlatStyle.Flat;
+            SelectAll.ForeColor = Color.Black;
             SelectAll.Location = new Point(299, 12);
             SelectAll.Name = "SelectAll";
             SelectAll.Size = new Size(185, 29);
             SelectAll.TabIndex = 2;
             SelectAll.Text = "Select All";
-            SelectAll.UseVisualStyleBackColor = true;
+            SelectAll.UseVisualStyleBackColor = false;
             // 
             // DeleteAll
             // 
+            DeleteAll.BackColor = Color.Red;
+            DeleteAll.FlatAppearance.BorderColor = Color.Black;
+            DeleteAll.FlatStyle = FlatStyle.Flat;
+            DeleteAll.ForeColor = Color.White;
             DeleteAll.Location = new Point(490, 12);
             DeleteAll.Name = "DeleteAll";
             DeleteAll.Size = new Size(185, 29);
             DeleteAll.TabIndex = 3;
             DeleteAll.Text = "Delete All";
-            DeleteAll.UseVisualStyleBackColor = true;
+            DeleteAll.UseVisualStyleBackColor = false;
             // 
             // Search
             // 
@@ -107,15 +125,20 @@
             // 
             // modeleditor
             // 
+            modeleditor.BackColor = Color.Black;
+            modeleditor.FlatStyle = FlatStyle.Flat;
+            modeleditor.ForeColor = Color.White;
             modeleditor.Location = new Point(897, 12);
             modeleditor.Name = "modeleditor";
             modeleditor.Size = new Size(150, 29);
             modeleditor.TabIndex = 5;
             modeleditor.Text = "+ Model Editor";
-            modeleditor.UseVisualStyleBackColor = true;
+            modeleditor.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
+            button2.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 128);
+            button2.FlatStyle = FlatStyle.Flat;
             button2.Location = new Point(1385, 12);
             button2.Name = "button2";
             button2.Size = new Size(176, 29);
@@ -125,6 +148,8 @@
             // 
             // button1
             // 
+            button1.FlatAppearance.BorderColor = Color.Lime;
+            button1.FlatStyle = FlatStyle.Flat;
             button1.Location = new Point(1203, 12);
             button1.Name = "button1";
             button1.Size = new Size(176, 29);
@@ -145,7 +170,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1573, 649);
+            BackColor = Color.White;
+            ClientSize = new Size(1568, 649);
             Controls.Add(models);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -155,6 +181,8 @@
             Controls.Add(SelectAll);
             Controls.Add(textBox1);
             Controls.Add(modelgroupbox);
+            Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Model";
             modelgroupbox.ResumeLayout(false);

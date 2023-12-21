@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(model));
             Selectimagelabel = new Label();
             Newimagebutton = new Button();
             Namelabel = new Label();
@@ -47,10 +48,10 @@
             modelfeatures = new GroupBox();
             updatebutton = new Button();
             bookgroup = new GroupBox();
-            digitalgroup = new GroupBox();
-            videogroup = new GroupBox();
             savebook = new Button();
+            digitalgroup = new GroupBox();
             savedigital = new Button();
+            videogroup = new GroupBox();
             savevideo = new Button();
             modelfeatures.SuspendLayout();
             bookgroup.SuspendLayout();
@@ -227,12 +228,22 @@
             // bookgroup
             // 
             bookgroup.Controls.Add(savebook);
+            bookgroup.ForeColor = SystemColors.ControlText;
             bookgroup.Location = new Point(12, 303);
             bookgroup.Name = "bookgroup";
             bookgroup.Size = new Size(1311, 225);
             bookgroup.TabIndex = 17;
             bookgroup.TabStop = false;
             bookgroup.Text = "Book";
+            // 
+            // savebook
+            // 
+            savebook.Location = new Point(461, 190);
+            savebook.Name = "savebook";
+            savebook.Size = new Size(411, 29);
+            savebook.TabIndex = 0;
+            savebook.Text = "Save";
+            savebook.UseVisualStyleBackColor = true;
             // 
             // digitalgroup
             // 
@@ -244,6 +255,15 @@
             digitalgroup.TabStop = false;
             digitalgroup.Text = "Digital";
             // 
+            // savedigital
+            // 
+            savedigital.Location = new Point(461, 190);
+            savedigital.Name = "savedigital";
+            savedigital.Size = new Size(411, 29);
+            savedigital.TabIndex = 1;
+            savedigital.Text = "Save";
+            savedigital.UseVisualStyleBackColor = true;
+            // 
             // videogroup
             // 
             videogroup.Controls.Add(savevideo);
@@ -253,24 +273,6 @@
             videogroup.TabIndex = 19;
             videogroup.TabStop = false;
             videogroup.Text = "Video";
-            // 
-            // savebook
-            // 
-            savebook.Location = new Point(461, 190);
-            savebook.Name = "savebook";
-            savebook.Size = new Size(411, 29);
-            savebook.TabIndex = 0;
-            savebook.Text = "Save";
-            savebook.UseVisualStyleBackColor = true;
-            // 
-            // savedigital
-            // 
-            savedigital.Location = new Point(461, 190);
-            savedigital.Name = "savedigital";
-            savedigital.Size = new Size(411, 29);
-            savedigital.TabIndex = 1;
-            savedigital.Text = "Save";
-            savedigital.UseVisualStyleBackColor = true;
             // 
             // savevideo
             // 
@@ -290,6 +292,7 @@
             Controls.Add(digitalgroup);
             Controls.Add(bookgroup);
             Controls.Add(modelfeatures);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "model";
             Text = "model";
             modelfeatures.ResumeLayout(false);
