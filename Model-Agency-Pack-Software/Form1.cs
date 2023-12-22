@@ -11,5 +11,11 @@ namespace Model_Agency_Pack_Software
         {
 
         }
+
+        private void modeleditor_Click(object sender, EventArgs e)
+        {
+            Modeleditorpage modeleditorPage = new Modeleditorpage();
+            modeleditorPage.Show();
+        }
     }
 }

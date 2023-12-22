@@ -30,11 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Modeleditorpage));
             Uploadmodel = new GroupBox();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
             İnstagramtext = new TextBox();
             Eyestext = new TextBox();
             Shoestext = new TextBox();
@@ -68,11 +63,6 @@
             // 
             // Uploadmodel
             // 
-            Uploadmodel.Controls.Add(label5);
-            Uploadmodel.Controls.Add(label4);
-            Uploadmodel.Controls.Add(label3);
-            Uploadmodel.Controls.Add(label2);
-            Uploadmodel.Controls.Add(label1);
             Uploadmodel.Controls.Add(İnstagramtext);
             Uploadmodel.Controls.Add(Eyestext);
             Uploadmodel.Controls.Add(Shoestext);
@@ -100,59 +90,14 @@
             Uploadmodel.Controls.Add(imagelabel);
             Uploadmodel.Location = new Point(12, 12);
             Uploadmodel.Name = "Uploadmodel";
-            Uploadmodel.Size = new Size(1087, 360);
+            Uploadmodel.Size = new Size(1255, 360);
             Uploadmodel.TabIndex = 0;
             Uploadmodel.TabStop = false;
             Uploadmodel.Text = "New Model";
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(986, 201);
-            label5.Name = "label5";
-            label5.Size = new Size(50, 20);
-            label5.TabIndex = 22;
-            label5.Text = "label5";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(986, 146);
-            label4.Name = "label4";
-            label4.Size = new Size(50, 20);
-            label4.TabIndex = 21;
-            label4.Text = "label4";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(986, 85);
-            label3.Name = "label3";
-            label3.Size = new Size(50, 20);
-            label3.TabIndex = 20;
-            label3.Text = "label3";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(986, 35);
-            label2.Name = "label2";
-            label2.Size = new Size(50, 20);
-            label2.TabIndex = 19;
-            label2.Text = "label2";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(284, 32);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 18;
-            label1.Text = "label1";
-            // 
             // İnstagramtext
             // 
-            İnstagramtext.Location = new Point(789, 198);
+            İnstagramtext.Location = new Point(959, 197);
             İnstagramtext.Name = "İnstagramtext";
             İnstagramtext.Size = new Size(191, 27);
             İnstagramtext.TabIndex = 12;
@@ -160,7 +105,7 @@
             // 
             // Eyestext
             // 
-            Eyestext.Location = new Point(474, 304);
+            Eyestext.Location = new Point(592, 309);
             Eyestext.Name = "Eyestext";
             Eyestext.Size = new Size(191, 27);
             Eyestext.TabIndex = 12;
@@ -168,7 +113,7 @@
             // 
             // Shoestext
             // 
-            Shoestext.Location = new Point(474, 250);
+            Shoestext.Location = new Point(592, 255);
             Shoestext.Name = "Shoestext";
             Shoestext.Size = new Size(191, 27);
             Shoestext.TabIndex = 17;
@@ -176,7 +121,7 @@
             // 
             // Hipstext
             // 
-            Hipstext.Location = new Point(474, 195);
+            Hipstext.Location = new Point(592, 200);
             Hipstext.Name = "Hipstext";
             Hipstext.Size = new Size(191, 27);
             Hipstext.TabIndex = 12;
@@ -184,7 +129,7 @@
             // 
             // waisttext
             // 
-            waisttext.Location = new Point(474, 138);
+            waisttext.Location = new Point(592, 143);
             waisttext.Name = "waisttext";
             waisttext.Size = new Size(191, 27);
             waisttext.TabIndex = 12;
@@ -192,7 +137,7 @@
             // 
             // Chestbusttext
             // 
-            Chestbusttext.Location = new Point(474, 80);
+            Chestbusttext.Location = new Point(592, 85);
             Chestbusttext.Name = "Chestbusttext";
             Chestbusttext.Size = new Size(191, 27);
             Chestbusttext.TabIndex = 16;
@@ -200,7 +145,7 @@
             // 
             // Heighttext
             // 
-            Heighttext.Location = new Point(474, 28);
+            Heighttext.Location = new Point(592, 33);
             Heighttext.Name = "Heighttext";
             Heighttext.Size = new Size(191, 27);
             Heighttext.TabIndex = 15;
@@ -212,7 +157,7 @@
             Videobutton.FlatAppearance.BorderColor = Color.White;
             Videobutton.FlatStyle = FlatStyle.Flat;
             Videobutton.ForeColor = Color.White;
-            Videobutton.Location = new Point(789, 141);
+            Videobutton.Location = new Point(959, 140);
             Videobutton.Name = "Videobutton";
             Videobutton.Size = new Size(191, 29);
             Videobutton.TabIndex = 13;
@@ -225,7 +170,7 @@
             Digitalbutton.BackColor = SystemColors.ActiveCaptionText;
             Digitalbutton.FlatStyle = FlatStyle.Flat;
             Digitalbutton.ForeColor = Color.White;
-            Digitalbutton.Location = new Point(789, 81);
+            Digitalbutton.Location = new Point(959, 80);
             Digitalbutton.Name = "Digitalbutton";
             Digitalbutton.Size = new Size(191, 29);
             Digitalbutton.TabIndex = 14;
@@ -237,7 +182,7 @@
             // 
             Bookbutton.BackColor = SystemColors.ActiveCaptionText;
             Bookbutton.ForeColor = Color.White;
-            Bookbutton.Location = new Point(789, 29);
+            Bookbutton.Location = new Point(959, 28);
             Bookbutton.Name = "Bookbutton";
             Bookbutton.Size = new Size(191, 29);
             Bookbutton.TabIndex = 13;
@@ -270,7 +215,7 @@
             // 
             Uploadbutton.BackColor = Color.LightGreen;
             Uploadbutton.FlatStyle = FlatStyle.Flat;
-            Uploadbutton.Location = new Point(789, 300);
+            Uploadbutton.Location = new Point(959, 299);
             Uploadbutton.Name = "Uploadbutton";
             Uploadbutton.Size = new Size(191, 41);
             Uploadbutton.TabIndex = 10;
@@ -282,7 +227,7 @@
             // 
             İnstagramlabel.AutoSize = true;
             İnstagramlabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            İnstagramlabel.Location = new Point(675, 194);
+            İnstagramlabel.Location = new Point(845, 193);
             İnstagramlabel.Name = "İnstagramlabel";
             İnstagramlabel.Size = new Size(108, 28);
             İnstagramlabel.TabIndex = 1;
@@ -292,7 +237,7 @@
             // 
             Videolabel.AutoSize = true;
             Videolabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Videolabel.Location = new Point(711, 138);
+            Videolabel.Location = new Point(881, 137);
             Videolabel.Name = "Videolabel";
             Videolabel.Size = new Size(72, 28);
             Videolabel.TabIndex = 9;
@@ -302,7 +247,7 @@
             // 
             Digitallabel.AutoSize = true;
             Digitallabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Digitallabel.Location = new Point(704, 77);
+            Digitallabel.Location = new Point(874, 76);
             Digitallabel.Name = "Digitallabel";
             Digitallabel.Size = new Size(79, 28);
             Digitallabel.TabIndex = 8;
@@ -312,7 +257,7 @@
             // 
             Booklabel.AutoSize = true;
             Booklabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Booklabel.Location = new Point(717, 26);
+            Booklabel.Location = new Point(887, 25);
             Booklabel.Name = "Booklabel";
             Booklabel.Size = new Size(66, 28);
             Booklabel.TabIndex = 7;
@@ -322,7 +267,7 @@
             // 
             Eyeslabel.AutoSize = true;
             Eyeslabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Eyeslabel.Location = new Point(409, 300);
+            Eyeslabel.Location = new Point(527, 305);
             Eyeslabel.Name = "Eyeslabel";
             Eyeslabel.Size = new Size(59, 28);
             Eyeslabel.TabIndex = 6;
@@ -332,7 +277,7 @@
             // 
             Shoeslabel.AutoSize = true;
             Shoeslabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Shoeslabel.Location = new Point(395, 246);
+            Shoeslabel.Location = new Point(513, 251);
             Shoeslabel.Name = "Shoeslabel";
             Shoeslabel.Size = new Size(73, 28);
             Shoeslabel.TabIndex = 1;
@@ -342,7 +287,7 @@
             // 
             hipslabel.AutoSize = true;
             hipslabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            hipslabel.Location = new Point(408, 191);
+            hipslabel.Location = new Point(526, 196);
             hipslabel.Name = "hipslabel";
             hipslabel.Size = new Size(60, 28);
             hipslabel.TabIndex = 5;
@@ -352,7 +297,7 @@
             // 
             waistlabel.AutoSize = true;
             waistlabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            waistlabel.Location = new Point(399, 135);
+            waistlabel.Location = new Point(517, 140);
             waistlabel.Name = "waistlabel";
             waistlabel.Size = new Size(69, 28);
             waistlabel.TabIndex = 4;
@@ -362,7 +307,7 @@
             // 
             chestbustlabel.AutoSize = true;
             chestbustlabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            chestbustlabel.Location = new Point(344, 74);
+            chestbustlabel.Location = new Point(462, 79);
             chestbustlabel.Name = "chestbustlabel";
             chestbustlabel.Size = new Size(124, 28);
             chestbustlabel.TabIndex = 3;
@@ -372,7 +317,7 @@
             // 
             Heightlabel.AutoSize = true;
             Heightlabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Heightlabel.Location = new Point(388, 23);
+            Heightlabel.Location = new Point(506, 28);
             Heightlabel.Name = "Heightlabel";
             Heightlabel.Size = new Size(80, 28);
             Heightlabel.TabIndex = 2;
@@ -403,7 +348,7 @@
             Models.Controls.Add(Searcher);
             Models.Location = new Point(12, 378);
             Models.Name = "Models";
-            Models.Size = new Size(1087, 440);
+            Models.Size = new Size(1255, 440);
             Models.TabIndex = 1;
             Models.TabStop = false;
             Models.Text = "Models";
@@ -411,7 +356,7 @@
             // Searcher
             // 
             Searcher.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            Searcher.Location = new Point(474, 26);
+            Searcher.Location = new Point(592, 26);
             Searcher.Name = "Searcher";
             Searcher.Size = new Size(191, 27);
             Searcher.TabIndex = 0;
@@ -422,7 +367,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1114, 830);
+            ClientSize = new Size(1279, 830);
             Controls.Add(Models);
             Controls.Add(Uploadmodel);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -466,10 +411,5 @@
         private TextBox Heighttext;
         private GroupBox Models;
         private TextBox Searcher;
-        private Label label5;
-        private Label label4;
-        private Label label3;
-        private Label label2;
-        private Label label1;
     }
 }

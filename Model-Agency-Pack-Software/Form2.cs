@@ -33,7 +33,7 @@ namespace Model_Agency_Pack_Software
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string selectedFileName = openFileDialog1.FileName;
-                label1.Text = selectedFileName;
+
             }
         }
 
@@ -52,7 +52,9 @@ namespace Model_Agency_Pack_Software
                 foreach (string fileName in selectedFileNames)
                 {
                     Console.WriteLine(fileName);
+
                 }
+
             }
         }
 

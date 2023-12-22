@@ -134,6 +134,7 @@
             modeleditor.TabIndex = 5;
             modeleditor.Text = "+ Model Editor";
             modeleditor.UseVisualStyleBackColor = false;
+            modeleditor.Click += modeleditor_Click;
             // 
             // button2
             // 
