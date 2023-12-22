@@ -185,6 +185,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Model";
+            Load += Form1_Load;
             modelgroupbox.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();

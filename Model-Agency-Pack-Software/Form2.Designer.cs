@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Modeleditorpage));
             Uploadmodel = new GroupBox();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
             İnstagramtext = new TextBox();
             Eyestext = new TextBox();
             Shoestext = new TextBox();
@@ -63,6 +68,11 @@
             // 
             // Uploadmodel
             // 
+            Uploadmodel.Controls.Add(label5);
+            Uploadmodel.Controls.Add(label4);
+            Uploadmodel.Controls.Add(label3);
+            Uploadmodel.Controls.Add(label2);
+            Uploadmodel.Controls.Add(label1);
             Uploadmodel.Controls.Add(İnstagramtext);
             Uploadmodel.Controls.Add(Eyestext);
             Uploadmodel.Controls.Add(Shoestext);
@@ -95,9 +105,54 @@
             Uploadmodel.TabStop = false;
             Uploadmodel.Text = "New Model";
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(986, 201);
+            label5.Name = "label5";
+            label5.Size = new Size(50, 20);
+            label5.TabIndex = 22;
+            label5.Text = "label5";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(986, 146);
+            label4.Name = "label4";
+            label4.Size = new Size(50, 20);
+            label4.TabIndex = 21;
+            label4.Text = "label4";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(986, 85);
+            label3.Name = "label3";
+            label3.Size = new Size(50, 20);
+            label3.TabIndex = 20;
+            label3.Text = "label3";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(986, 35);
+            label2.Name = "label2";
+            label2.Size = new Size(50, 20);
+            label2.TabIndex = 19;
+            label2.Text = "label2";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(284, 32);
+            label1.Name = "label1";
+            label1.Size = new Size(50, 20);
+            label1.TabIndex = 18;
+            label1.Text = "label1";
+            // 
             // İnstagramtext
             // 
-            İnstagramtext.Location = new Point(847, 195);
+            İnstagramtext.Location = new Point(789, 198);
             İnstagramtext.Name = "İnstagramtext";
             İnstagramtext.Size = new Size(191, 27);
             İnstagramtext.TabIndex = 12;
@@ -157,51 +212,55 @@
             Videobutton.FlatAppearance.BorderColor = Color.White;
             Videobutton.FlatStyle = FlatStyle.Flat;
             Videobutton.ForeColor = Color.White;
-            Videobutton.Location = new Point(847, 138);
+            Videobutton.Location = new Point(789, 141);
             Videobutton.Name = "Videobutton";
             Videobutton.Size = new Size(191, 29);
             Videobutton.TabIndex = 13;
             Videobutton.Text = "Select Videos";
             Videobutton.UseVisualStyleBackColor = false;
+            Videobutton.Click += Videobutton_Click;
             // 
             // Digitalbutton
             // 
             Digitalbutton.BackColor = SystemColors.ActiveCaptionText;
             Digitalbutton.FlatStyle = FlatStyle.Flat;
             Digitalbutton.ForeColor = Color.White;
-            Digitalbutton.Location = new Point(847, 78);
+            Digitalbutton.Location = new Point(789, 81);
             Digitalbutton.Name = "Digitalbutton";
             Digitalbutton.Size = new Size(191, 29);
             Digitalbutton.TabIndex = 14;
             Digitalbutton.Text = "Select Digitals";
             Digitalbutton.UseVisualStyleBackColor = false;
+            Digitalbutton.Click += Digitalbutton_Click;
             // 
             // Bookbutton
             // 
             Bookbutton.BackColor = SystemColors.ActiveCaptionText;
             Bookbutton.ForeColor = Color.White;
-            Bookbutton.Location = new Point(847, 26);
+            Bookbutton.Location = new Point(789, 29);
             Bookbutton.Name = "Bookbutton";
             Bookbutton.Size = new Size(191, 29);
             Bookbutton.TabIndex = 13;
             Bookbutton.Text = "Select Books";
             Bookbutton.UseVisualStyleBackColor = false;
+            Bookbutton.Click += Bookbutton_Click;
             // 
             // imagebutton
             // 
             imagebutton.BackColor = Color.Black;
             imagebutton.ForeColor = SystemColors.ButtonFace;
-            imagebutton.Location = new Point(130, 26);
+            imagebutton.Location = new Point(87, 28);
             imagebutton.Name = "imagebutton";
             imagebutton.Size = new Size(191, 29);
             imagebutton.TabIndex = 12;
             imagebutton.Text = "Select image";
             imagebutton.UseVisualStyleBackColor = false;
+            imagebutton.Click += imagebutton_Click;
             // 
             // Nametext
             // 
             Nametext.Font = new Font("Segoe UI Symbol", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            Nametext.Location = new Point(130, 78);
+            Nametext.Location = new Point(87, 80);
             Nametext.Name = "Nametext";
             Nametext.Size = new Size(191, 27);
             Nametext.TabIndex = 11;
@@ -211,18 +270,19 @@
             // 
             Uploadbutton.BackColor = Color.LightGreen;
             Uploadbutton.FlatStyle = FlatStyle.Flat;
-            Uploadbutton.Location = new Point(847, 297);
+            Uploadbutton.Location = new Point(789, 300);
             Uploadbutton.Name = "Uploadbutton";
             Uploadbutton.Size = new Size(191, 41);
             Uploadbutton.TabIndex = 10;
             Uploadbutton.Text = "Upload";
             Uploadbutton.UseVisualStyleBackColor = false;
+            Uploadbutton.Click += Uploadbutton_Click;
             // 
             // İnstagramlabel
             // 
             İnstagramlabel.AutoSize = true;
             İnstagramlabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            İnstagramlabel.Location = new Point(733, 191);
+            İnstagramlabel.Location = new Point(675, 194);
             İnstagramlabel.Name = "İnstagramlabel";
             İnstagramlabel.Size = new Size(108, 28);
             İnstagramlabel.TabIndex = 1;
@@ -232,7 +292,7 @@
             // 
             Videolabel.AutoSize = true;
             Videolabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Videolabel.Location = new Point(769, 135);
+            Videolabel.Location = new Point(711, 138);
             Videolabel.Name = "Videolabel";
             Videolabel.Size = new Size(72, 28);
             Videolabel.TabIndex = 9;
@@ -242,7 +302,7 @@
             // 
             Digitallabel.AutoSize = true;
             Digitallabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Digitallabel.Location = new Point(762, 74);
+            Digitallabel.Location = new Point(704, 77);
             Digitallabel.Name = "Digitallabel";
             Digitallabel.Size = new Size(79, 28);
             Digitallabel.TabIndex = 8;
@@ -252,7 +312,7 @@
             // 
             Booklabel.AutoSize = true;
             Booklabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Booklabel.Location = new Point(775, 23);
+            Booklabel.Location = new Point(717, 26);
             Booklabel.Name = "Booklabel";
             Booklabel.Size = new Size(66, 28);
             Booklabel.TabIndex = 7;
@@ -322,7 +382,7 @@
             // 
             namelabel.AutoSize = true;
             namelabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            namelabel.Location = new Point(51, 74);
+            namelabel.Location = new Point(8, 76);
             namelabel.Name = "namelabel";
             namelabel.Size = new Size(73, 28);
             namelabel.TabIndex = 1;
@@ -332,7 +392,7 @@
             // 
             imagelabel.AutoSize = true;
             imagelabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            imagelabel.Location = new Point(49, 23);
+            imagelabel.Location = new Point(6, 25);
             imagelabel.Name = "imagelabel";
             imagelabel.Size = new Size(75, 28);
             imagelabel.TabIndex = 0;
@@ -368,6 +428,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Modeleditorpage";
             Text = "Editor Page";
+            Load += Modeleditorpage_Load;
             Uploadmodel.ResumeLayout(false);
             Uploadmodel.PerformLayout();
             Models.ResumeLayout(false);
@@ -405,5 +466,10 @@
         private TextBox Heighttext;
         private GroupBox Models;
         private TextBox Searcher;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Label label1;
     }
 }

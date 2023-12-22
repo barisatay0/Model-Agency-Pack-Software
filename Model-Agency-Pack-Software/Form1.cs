@@ -6,5 +6,10 @@ namespace Model_Agency_Pack_Software
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
