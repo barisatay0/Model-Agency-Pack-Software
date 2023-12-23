@@ -210,6 +210,7 @@
             Nametext.Size = new Size(191, 27);
             Nametext.TabIndex = 11;
             Nametext.Text = "Model Name";
+            Nametext.TextChanged += Nametext_TextChanged;
             // 
             // Uploadbutton
             // 
