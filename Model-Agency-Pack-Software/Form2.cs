@@ -154,5 +154,12 @@ namespace Model_Agency_Pack_Software
         {
 
         }
+
+        private void returntomainpage_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form1 form1 = new Form1();
+            form1.Show();
+        }
     }
 }

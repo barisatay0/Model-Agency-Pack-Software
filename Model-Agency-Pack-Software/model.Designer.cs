@@ -53,6 +53,7 @@
             savedigital = new Button();
             videogroup = new GroupBox();
             savevideo = new Button();
+            returntomainpage = new Button();
             modelfeatures.SuspendLayout();
             bookgroup.SuspendLayout();
             digitalgroup.SuspendLayout();
@@ -194,6 +195,7 @@
             // 
             // modelfeatures
             // 
+            modelfeatures.Controls.Add(returntomainpage);
             modelfeatures.Controls.Add(updatebutton);
             modelfeatures.Controls.Add(Newimagebutton);
             modelfeatures.Controls.Add(textBox7);
@@ -293,6 +295,17 @@
             savevideo.Text = "Save";
             savevideo.UseVisualStyleBackColor = false;
             // 
+            // returntomainpage
+            // 
+            returntomainpage.FlatStyle = FlatStyle.Flat;
+            returntomainpage.Location = new Point(1121, 26);
+            returntomainpage.Name = "returntomainpage";
+            returntomainpage.Size = new Size(184, 29);
+            returntomainpage.TabIndex = 17;
+            returntomainpage.Text = "Return To Main Page";
+            returntomainpage.UseVisualStyleBackColor = true;
+            returntomainpage.Click += returntomainpage_Click;
+            // 
             // model
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -340,5 +353,6 @@
         private Button savedigital;
         private GroupBox videogroup;
         private Button savevideo;
+        private Button returntomainpage;
     }
 }

@@ -14,6 +14,7 @@ namespace Model_Agency_Pack_Software
 
         private void modeleditor_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Modeleditorpage modeleditorPage = new Modeleditorpage();
             modeleditorPage.Show();
         }
