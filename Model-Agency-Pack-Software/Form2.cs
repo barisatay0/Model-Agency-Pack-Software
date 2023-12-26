@@ -23,7 +23,10 @@ namespace Model_Agency_Pack_Software
         {
 
         }
-
+        List<string> imageFilePaths = new List<string>();
+        List<string> bookFilePaths = new List<string>();
+        List<string> digitalFilePaths = new List<string>();
+        List<string> videoFilePaths = new List<string>();
         private void imagebutton_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
@@ -33,9 +36,13 @@ namespace Model_Agency_Pack_Software
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                string selectedFileName = openFileDialog1.FileName;
-
+                imageFilePaths.AddRange(openFileDialog1.FileNames);
+                foreach (string fileName in openFileDialog1.FileNames)
+                {
+                    Console.WriteLine(fileName);
+                }
             }
+
         }
 
         private void Bookbutton_Click(object sender, EventArgs e)
@@ -48,12 +55,10 @@ namespace Model_Agency_Pack_Software
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                string[] selectedFileNames = openFileDialog1.FileNames;
-
-                foreach (string fileName in selectedFileNames)
+                bookFilePaths.AddRange(openFileDialog1.FileNames);
+                foreach (string fileName in openFileDialog1.FileNames)
                 {
                     Console.WriteLine(fileName);
-
                 }
 
             }
@@ -69,9 +74,8 @@ namespace Model_Agency_Pack_Software
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                string[] selectedFileNames = openFileDialog1.FileNames;
-
-                foreach (string fileName in selectedFileNames)
+                digitalFilePaths.AddRange(openFileDialog1.FileNames);
+                foreach (string fileName in openFileDialog1.FileNames)
                 {
                     Console.WriteLine(fileName);
                 }
@@ -88,9 +92,8 @@ namespace Model_Agency_Pack_Software
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                string[] selectedFileNames = openFileDialog1.FileNames;
-
-                foreach (string fileName in selectedFileNames)
+                videoFilePaths.AddRange(openFileDialog1.FileNames);
+                foreach (string fileName in openFileDialog1.FileNames)
                 {
                     Console.WriteLine(fileName);
                 }
@@ -116,7 +119,7 @@ namespace Model_Agency_Pack_Software
                 connection.Open();
                 Console.WriteLine("Connected.");
 
-                string insertQuery = "INSERT INTO items (name, height, chest, waist, hips, shoes, eyes, instagram) VALUES (@Name, @Height, @Chestbust, @Waist, @Hips, @Shoes, @Eyes, @Instagram)";
+                string insertQuery = "INSERT INTO items (name, height, chest, waist, hips, shoes, eyes, instagram, image, book, digital, video) VALUES (@Name, @Height, @Chestbust, @Waist, @Hips, @Shoes, @Eyes, @Instagram, @Image, @Book, @Digital, @Video)";
                 MySqlCommand command = new MySqlCommand(insertQuery, connection);
                 command.Parameters.AddWithValue("@Name", Name);
                 command.Parameters.AddWithValue("@Height", Height);
@@ -127,7 +130,11 @@ namespace Model_Agency_Pack_Software
                 command.Parameters.AddWithValue("@Eyes", Eyes);
                 command.Parameters.AddWithValue("@Instagram", instagram);
 
-
+   
+                command.Parameters.AddWithValue("@Image", string.Join(",", imageFilePaths.Select(Path.GetFileName)));
+                command.Parameters.AddWithValue("@Book", string.Join(",", bookFilePaths.Select(Path.GetFileName)));
+                command.Parameters.AddWithValue("@Digital", string.Join(",", digitalFilePaths.Select(Path.GetFileName)));
+                command.Parameters.AddWithValue("@Video", string.Join(",", videoFilePaths.Select(Path.GetFileName)));
 
                 int affectedRows = command.ExecuteNonQuery();
 
@@ -141,15 +148,46 @@ namespace Model_Agency_Pack_Software
                     Console.WriteLine("Model Couldn't add");
                     MessageBox.Show("Model Couldn't add");
                 }
+                OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
-                connection.Close(); // Veritabanı bağlantısını kapat
+                foreach (string fileName in imageFilePaths)
+                {
+                    string destinationPath = @"C:\xampp\htdocs\data\" + Path.GetFileName(fileName);
+                    File.Copy(fileName, destinationPath, true);
+                    Console.WriteLine("File copied to: " + destinationPath);
+                }
+                foreach (string fileName in bookFilePaths)
+                {
+                    string destinationPath = @"C:\xampp\htdocs\data\" + Path.GetFileName(fileName);
+                    File.Copy(fileName, destinationPath, true);
+                    Console.WriteLine("File copied to: " + destinationPath);
+                }
+                foreach (string fileName in digitalFilePaths)
+                {
+                    string destinationPath = @"C:\xampp\htdocs\data\" + Path.GetFileName(fileName);
+                    File.Copy(fileName, destinationPath, true);
+                    Console.WriteLine("File copied to: " + destinationPath);
+                }
+                foreach (string fileName in videoFilePaths)
+                {
+                    string destinationPath = @"C:\xampp\htdocs\data\" + Path.GetFileName(fileName);
+                    File.Copy(fileName, destinationPath, true);
+                    Console.WriteLine("File copied to: " + destinationPath);
+                }
+
+
+                connection.Close();
             }
             catch (MySqlException ex)
             {
                 Console.WriteLine("Database Error: " + ex.Message);
                 MessageBox.Show("Database Error: " + ex.Message);
             }
-
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error while copying files: " + ex.Message);
+                MessageBox.Show("Error while copying files: " + ex.Message);
+            }
         }
 
         private void Nametext_TextChanged(object sender, EventArgs e)
