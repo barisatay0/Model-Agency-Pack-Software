@@ -116,7 +116,7 @@ namespace Model_Agency_Pack_Software
                 connection.Open();
                 Console.WriteLine("Connected.");
 
-                string insertQuery = "INSERT INTO items (image,name,height,weight,chest,waist,hips,shoes,eyes,digital,book,video,name,instagram) VALUES (@image, @Name, @Height, @Chestbust, @Waist, @Hips, @Shoes, @Eyes, @instagram, @book, @digital, @video)";
+                string insertQuery = "INSERT INTO items (name, height, chest, waist, hips, shoes, eyes, instagram) VALUES (@Name, @Height, @Chestbust, @Waist, @Hips, @Shoes, @Eyes, @Instagram)";
                 MySqlCommand command = new MySqlCommand(insertQuery, connection);
                 command.Parameters.AddWithValue("@Name", Name);
                 command.Parameters.AddWithValue("@Height", Height);
@@ -125,7 +125,9 @@ namespace Model_Agency_Pack_Software
                 command.Parameters.AddWithValue("@Hips", Hips);
                 command.Parameters.AddWithValue("@Shoes", Shoes);
                 command.Parameters.AddWithValue("@Eyes", Eyes);
-                command.Parameters.AddWithValue("@instagram", instagram);
+                command.Parameters.AddWithValue("@Instagram", instagram);
+
+
 
                 int affectedRows = command.ExecuteNonQuery();
 
@@ -160,6 +162,41 @@ namespace Model_Agency_Pack_Software
             this.Close();
             Form1 form1 = new Form1();
             form1.Show();
+        }
+
+        private void İnstagramtext_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Heighttext_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Chestbusttext_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void waisttext_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Hipstext_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Shoestext_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Eyestext_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -117,6 +117,7 @@
             İnstagramtext.Size = new Size(191, 27);
             İnstagramtext.TabIndex = 12;
             İnstagramtext.Text = "Model İnstagram";
+            İnstagramtext.TextChanged += İnstagramtext_TextChanged;
             // 
             // Eyestext
             // 
@@ -126,6 +127,7 @@
             Eyestext.Size = new Size(191, 27);
             Eyestext.TabIndex = 12;
             Eyestext.Text = "Model Eyes";
+            Eyestext.TextChanged += Eyestext_TextChanged;
             // 
             // Shoestext
             // 
@@ -135,6 +137,7 @@
             Shoestext.Size = new Size(191, 27);
             Shoestext.TabIndex = 17;
             Shoestext.Text = "Model Shoes";
+            Shoestext.TextChanged += Shoestext_TextChanged;
             // 
             // Hipstext
             // 
@@ -144,6 +147,7 @@
             Hipstext.Size = new Size(191, 27);
             Hipstext.TabIndex = 12;
             Hipstext.Text = "Model Hips";
+            Hipstext.TextChanged += Hipstext_TextChanged;
             // 
             // waisttext
             // 
@@ -153,6 +157,7 @@
             waisttext.Size = new Size(191, 27);
             waisttext.TabIndex = 12;
             waisttext.Text = "Model Waist";
+            waisttext.TextChanged += waisttext_TextChanged;
             // 
             // Chestbusttext
             // 
@@ -162,6 +167,7 @@
             Chestbusttext.Size = new Size(191, 27);
             Chestbusttext.TabIndex = 16;
             Chestbusttext.Text = "Model Chest Or Bust";
+            Chestbusttext.TextChanged += Chestbusttext_TextChanged;
             // 
             // Heighttext
             // 
@@ -171,6 +177,7 @@
             Heighttext.Size = new Size(191, 27);
             Heighttext.TabIndex = 15;
             Heighttext.Text = "Model Height";
+            Heighttext.TextChanged += Heighttext_TextChanged;
             // 
             // Videobutton
             // 
@@ -240,8 +247,11 @@
             // 
             // Uploadbutton
             // 
-            Uploadbutton.BackColor = Color.LightGreen;
+            Uploadbutton.BackColor = Color.Transparent;
             Uploadbutton.Cursor = Cursors.Hand;
+            Uploadbutton.FlatAppearance.BorderColor = Color.Lime;
+            Uploadbutton.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 255, 128);
+            Uploadbutton.FlatAppearance.MouseOverBackColor = Color.FromArgb(128, 255, 128);
             Uploadbutton.FlatStyle = FlatStyle.Flat;
             Uploadbutton.Location = new Point(1543, 302);
             Uploadbutton.Name = "Uploadbutton";
