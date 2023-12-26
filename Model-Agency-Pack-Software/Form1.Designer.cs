@@ -40,7 +40,9 @@
             button2 = new Button();
             button1 = new Button();
             models = new GroupBox();
+            fileSystemWatcher1 = new FileSystemWatcher();
             modelgroupbox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             SuspendLayout();
             // 
             // modelgroupbox
@@ -179,6 +181,13 @@
             models.TabIndex = 8;
             models.TabStop = false;
             models.Text = "Models";
+            models.Enter += models_Enter;
+            // 
+            // fileSystemWatcher1
+            // 
+            fileSystemWatcher1.EnableRaisingEvents = true;
+            fileSystemWatcher1.SynchronizingObject = this;
+            fileSystemWatcher1.Changed += fileSystemWatcher1_Changed;
             // 
             // Form1
             // 
@@ -203,6 +212,7 @@
             Text = "Model";
             Load += Form1_Load;
             modelgroupbox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -220,5 +230,6 @@
         private Button button2;
         private Button button1;
         private GroupBox models;
+        private FileSystemWatcher fileSystemWatcher1;
     }
 }
