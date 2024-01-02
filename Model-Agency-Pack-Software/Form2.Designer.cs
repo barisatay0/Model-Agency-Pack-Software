@@ -57,7 +57,7 @@
             namelabel = new Label();
             imagelabel = new Label();
             Models = new GroupBox();
-            Searcher = new TextBox();
+            modelspanel = new Panel();
             Uploadmodel.SuspendLayout();
             Models.SuspendLayout();
             SuspendLayout();
@@ -383,24 +383,23 @@
             // 
             // Models
             // 
-            Models.Controls.Add(Searcher);
+            Models.Controls.Add(modelspanel);
             Models.Location = new Point(12, 378);
             Models.Name = "Models";
-            Models.Size = new Size(1740, 440);
+            Models.Size = new Size(1740, 370);
             Models.TabIndex = 1;
             Models.TabStop = false;
             Models.Text = "Models";
+            Models.Enter += Models_Enter;
             // 
-            // Searcher
+            // modelspanel
             // 
-            Searcher.Cursor = Cursors.IBeam;
-            Searcher.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            Searcher.Location = new Point(771, 26);
-            Searcher.Name = "Searcher";
-            Searcher.Size = new Size(388, 27);
-            Searcher.TabIndex = 0;
-            Searcher.Text = "Search Model";
-            Searcher.TextAlign = HorizontalAlignment.Center;
+            modelspanel.AutoScroll = true;
+            modelspanel.Location = new Point(10, 21);
+            modelspanel.Name = "modelspanel";
+            modelspanel.Size = new Size(1724, 343);
+            modelspanel.TabIndex = 0;
+            modelspanel.Paint += modelspanel_Paint;
             // 
             // Modeleditorpage
             // 
@@ -417,7 +416,6 @@
             Uploadmodel.ResumeLayout(false);
             Uploadmodel.PerformLayout();
             Models.ResumeLayout(false);
-            Models.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -450,7 +448,7 @@
         private TextBox Chestbusttext;
         private TextBox Heighttext;
         private GroupBox Models;
-        private TextBox Searcher;
         private Button returntomainpage;
+        private Panel modelspanel;
     }
 }

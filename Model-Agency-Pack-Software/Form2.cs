@@ -21,6 +21,67 @@ namespace Model_Agency_Pack_Software
 
         private void Modeleditorpage_Load(object sender, EventArgs e)
         {
+            string connectionString = "server=127.0.0.1;port=3306;database=pack;user=root;";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+                Console.WriteLine("Connected.");
+
+                string selectQuery = "SELECT name, image FROM items";
+                MySqlCommand command = new MySqlCommand(selectQuery, connection);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                int verticalSpacing = 20;
+                int startingHeight = 20;
+
+                while (reader.Read())
+                {
+                    string modelName = reader.GetString("name");
+                    string imageFileName = reader.GetString("image");
+
+                    string imageFilePath = Path.Combine(@"C:\xampp\htdocs\data\", imageFileName);
+
+                    PictureBox pictureBox = new PictureBox();
+                    pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox.Size = new Size(100, 100);
+                    pictureBox.Location = new Point(10, startingHeight);
+
+                    if (File.Exists(imageFilePath))
+                    {
+                        pictureBox.Image = Image.FromFile(imageFilePath);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Dosya bulunamadı: " + imageFilePath);
+                    }
+
+                    Label pathLabel = new Label();
+                    pathLabel.Text = modelName;
+                    pathLabel.Location = new Point(120, startingHeight + 40);
+
+                    modelspanel.Controls.Add(pictureBox);
+                    modelspanel.Controls.Add(pathLabel);
+
+                    startingHeight += 120;
+                }
+
+
+
+                reader.Close();
+                connection.Close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Database Error: " + ex.Message);
+                MessageBox.Show("Database Error: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
+            }
 
         }
         List<string> imageFilePaths = new List<string>();
@@ -130,7 +191,7 @@ namespace Model_Agency_Pack_Software
                 command.Parameters.AddWithValue("@Eyes", Eyes);
                 command.Parameters.AddWithValue("@Instagram", instagram);
 
-   
+
                 command.Parameters.AddWithValue("@Image", string.Join(",", imageFilePaths.Select(Path.GetFileName)));
                 command.Parameters.AddWithValue("@Book", string.Join(",", bookFilePaths.Select(Path.GetFileName)));
                 command.Parameters.AddWithValue("@Digital", string.Join(",", digitalFilePaths.Select(Path.GetFileName)));
@@ -233,6 +294,16 @@ namespace Model_Agency_Pack_Software
         }
 
         private void Eyestext_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Models_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void modelspanel_Paint(object sender, PaintEventArgs e)
         {
 
         }
