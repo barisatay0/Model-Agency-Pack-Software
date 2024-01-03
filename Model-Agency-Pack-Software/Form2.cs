@@ -75,6 +75,7 @@ namespace Model_Agency_Pack_Software
                         modelForm.SetModelName(selectedModel);
                         modelForm.Show();
                         this.Hide();
+                        modelForm.FormClosed += (s, args) => this.Close();
                     };
 
                     modelspanel.Controls.Add(modelButton);
@@ -272,9 +273,10 @@ namespace Model_Agency_Pack_Software
 
         private void returntomainpage_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Form1 form1 = new Form1();
             form1.Show();
+            form1.FormClosed += (s, args) => this.Close();
         }
 
         private void İnstagramtext_TextChanged(object sender, EventArgs e)

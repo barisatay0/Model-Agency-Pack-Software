@@ -37,10 +37,9 @@
             DeleteAll = new Button();
             Search = new TextBox();
             modeleditor = new Button();
-            button2 = new Button();
-            button1 = new Button();
             models = new GroupBox();
             fileSystemWatcher1 = new FileSystemWatcher();
+            website = new Button();
             modelgroupbox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             SuspendLayout();
@@ -115,7 +114,7 @@
             DeleteAll.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 128);
             DeleteAll.FlatStyle = FlatStyle.Flat;
             DeleteAll.ForeColor = Color.Black;
-            DeleteAll.Location = new Point(551, 14);
+            DeleteAll.Location = new Point(550, 12);
             DeleteAll.Name = "DeleteAll";
             DeleteAll.Size = new Size(208, 33);
             DeleteAll.TabIndex = 3;
@@ -124,10 +123,10 @@
             // 
             // Search
             // 
-            Search.Location = new Point(793, 14);
+            Search.Location = new Point(777, 12);
             Search.Multiline = true;
             Search.Name = "Search";
-            Search.Size = new Size(193, 32);
+            Search.Size = new Size(326, 33);
             Search.TabIndex = 4;
             Search.Text = "Search";
             // 
@@ -137,41 +136,13 @@
             modeleditor.Cursor = Cursors.Hand;
             modeleditor.FlatStyle = FlatStyle.Flat;
             modeleditor.ForeColor = Color.White;
-            modeleditor.Location = new Point(1009, 14);
+            modeleditor.Location = new Point(1119, 12);
             modeleditor.Name = "modeleditor";
-            modeleditor.Size = new Size(169, 33);
+            modeleditor.Size = new Size(194, 33);
             modeleditor.TabIndex = 5;
             modeleditor.Text = "+ Model Editor";
             modeleditor.UseVisualStyleBackColor = false;
             modeleditor.Click += modeleditor_Click;
-            // 
-            // button2
-            // 
-            button2.Cursor = Cursors.Hand;
-            button2.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 128);
-            button2.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 192, 192);
-            button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 192);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(1558, 14);
-            button2.Name = "button2";
-            button2.Size = new Size(198, 33);
-            button2.TabIndex = 7;
-            button2.Text = "Log out";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderColor = Color.Lime;
-            button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 255, 128);
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(128, 255, 128);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(1353, 14);
-            button1.Name = "button1";
-            button1.Size = new Size(198, 33);
-            button1.TabIndex = 6;
-            button1.Text = "SignUp";
-            button1.UseVisualStyleBackColor = true;
             // 
             // models
             // 
@@ -189,18 +160,30 @@
             fileSystemWatcher1.SynchronizingObject = this;
             fileSystemWatcher1.Changed += fileSystemWatcher1_Changed;
             // 
+            // website
+            // 
+            website.BackColor = SystemColors.InfoText;
+            website.FlatStyle = FlatStyle.Flat;
+            website.ForeColor = Color.White;
+            website.Location = new Point(1511, 15);
+            website.Name = "website";
+            website.Size = new Size(239, 33);
+            website.TabIndex = 9;
+            website.Text = "Website";
+            website.UseVisualStyleBackColor = false;
+            website.Click += website_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1764, 746);
-            Controls.Add(models);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(modeleditor);
+            Controls.Add(website);
             Controls.Add(Search);
+            Controls.Add(models);
             Controls.Add(DeleteAll);
+            Controls.Add(modeleditor);
             Controls.Add(SelectAll);
             Controls.Add(textBox1);
             Controls.Add(modelgroupbox);
@@ -227,9 +210,8 @@
         private Button DeleteAll;
         private TextBox Search;
         private Button modeleditor;
-        private Button button2;
-        private Button button1;
         private GroupBox models;
         private FileSystemWatcher fileSystemWatcher1;
+        private Button website;
     }
 }

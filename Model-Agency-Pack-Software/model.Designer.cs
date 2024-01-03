@@ -49,19 +49,19 @@
             returntomainpage = new Button();
             updatebutton = new Button();
             bookgroup = new GroupBox();
-            savebook = new Button();
-            digitalgroup = new GroupBox();
-            savedigital = new Button();
-            videogroup = new GroupBox();
-            savevideo = new Button();
-            panel1 = new Panel();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            panel2 = new Panel();
             addbook = new Button();
             button2 = new Button();
             button3 = new Button();
+            panel1 = new Panel();
+            savebook = new Button();
+            digitalgroup = new GroupBox();
             AddDigital = new Button();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            savedigital = new Button();
+            videogroup = new GroupBox();
             AddVideo = new Button();
+            panel2 = new Panel();
+            savevideo = new Button();
             modelfeatures.SuspendLayout();
             bookgroup.SuspendLayout();
             digitalgroup.SuspendLayout();
@@ -79,8 +79,9 @@
             // 
             // Newimagebutton
             // 
-            Newimagebutton.BackColor = Color.SpringGreen;
+            Newimagebutton.BackColor = Color.Black;
             Newimagebutton.FlatStyle = FlatStyle.Flat;
+            Newimagebutton.ForeColor = Color.White;
             Newimagebutton.Location = new Point(545, 62);
             Newimagebutton.Name = "Newimagebutton";
             Newimagebutton.Size = new Size(233, 29);
@@ -241,8 +242,9 @@
             // 
             // updatebutton
             // 
-            updatebutton.BackColor = Color.Gold;
+            updatebutton.BackColor = Color.Black;
             updatebutton.FlatStyle = FlatStyle.Flat;
+            updatebutton.ForeColor = Color.White;
             updatebutton.Location = new Point(461, 222);
             updatebutton.Name = "updatebutton";
             updatebutton.Size = new Size(411, 29);
@@ -265,88 +267,11 @@
             bookgroup.TabStop = false;
             bookgroup.Text = "Book";
             // 
-            // savebook
-            // 
-            savebook.BackColor = Color.SpringGreen;
-            savebook.FlatStyle = FlatStyle.Flat;
-            savebook.Location = new Point(683, 190);
-            savebook.Name = "savebook";
-            savebook.Size = new Size(189, 29);
-            savebook.TabIndex = 0;
-            savebook.Text = "Save";
-            savebook.UseVisualStyleBackColor = false;
-            // 
-            // digitalgroup
-            // 
-            digitalgroup.Controls.Add(AddDigital);
-            digitalgroup.Controls.Add(flowLayoutPanel1);
-            digitalgroup.Controls.Add(savedigital);
-            digitalgroup.Location = new Point(12, 534);
-            digitalgroup.Name = "digitalgroup";
-            digitalgroup.Size = new Size(1311, 225);
-            digitalgroup.TabIndex = 18;
-            digitalgroup.TabStop = false;
-            digitalgroup.Text = "Digital";
-            // 
-            // savedigital
-            // 
-            savedigital.BackColor = Color.SpringGreen;
-            savedigital.FlatStyle = FlatStyle.Flat;
-            savedigital.Location = new Point(683, 190);
-            savedigital.Name = "savedigital";
-            savedigital.Size = new Size(189, 29);
-            savedigital.TabIndex = 1;
-            savedigital.Text = "Save";
-            savedigital.UseVisualStyleBackColor = false;
-            // 
-            // videogroup
-            // 
-            videogroup.Controls.Add(AddVideo);
-            videogroup.Controls.Add(panel2);
-            videogroup.Controls.Add(savevideo);
-            videogroup.Location = new Point(12, 765);
-            videogroup.Name = "videogroup";
-            videogroup.Size = new Size(1311, 225);
-            videogroup.TabIndex = 19;
-            videogroup.TabStop = false;
-            videogroup.Text = "Video";
-            // 
-            // savevideo
-            // 
-            savevideo.BackColor = Color.SpringGreen;
-            savevideo.FlatStyle = FlatStyle.Flat;
-            savevideo.Location = new Point(683, 190);
-            savevideo.Name = "savevideo";
-            savevideo.Size = new Size(189, 29);
-            savevideo.TabIndex = 1;
-            savevideo.Text = "Save";
-            savevideo.UseVisualStyleBackColor = false;
-            // 
-            // panel1
-            // 
-            panel1.Location = new Point(6, 22);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1299, 162);
-            panel1.TabIndex = 1;
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.Location = new Point(6, 26);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1299, 158);
-            flowLayoutPanel1.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            panel2.Location = new Point(6, 22);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1299, 162);
-            panel2.TabIndex = 2;
-            // 
             // addbook
             // 
-            addbook.BackColor = Color.LightSeaGreen;
+            addbook.BackColor = Color.Black;
             addbook.FlatStyle = FlatStyle.Flat;
+            addbook.ForeColor = Color.White;
             addbook.Location = new Point(461, 190);
             addbook.Name = "addbook";
             addbook.Size = new Size(216, 29);
@@ -376,10 +301,42 @@
             button3.Text = "Save";
             button3.UseVisualStyleBackColor = false;
             // 
+            // panel1
+            // 
+            panel1.Location = new Point(6, 22);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1299, 162);
+            panel1.TabIndex = 1;
+            // 
+            // savebook
+            // 
+            savebook.BackColor = Color.White;
+            savebook.FlatAppearance.BorderSize = 2;
+            savebook.FlatStyle = FlatStyle.Flat;
+            savebook.Location = new Point(683, 190);
+            savebook.Name = "savebook";
+            savebook.Size = new Size(189, 29);
+            savebook.TabIndex = 0;
+            savebook.Text = "Save";
+            savebook.UseVisualStyleBackColor = false;
+            // 
+            // digitalgroup
+            // 
+            digitalgroup.Controls.Add(AddDigital);
+            digitalgroup.Controls.Add(flowLayoutPanel1);
+            digitalgroup.Controls.Add(savedigital);
+            digitalgroup.Location = new Point(12, 534);
+            digitalgroup.Name = "digitalgroup";
+            digitalgroup.Size = new Size(1311, 225);
+            digitalgroup.TabIndex = 18;
+            digitalgroup.TabStop = false;
+            digitalgroup.Text = "Digital";
+            // 
             // AddDigital
             // 
-            AddDigital.BackColor = Color.LightSeaGreen;
+            AddDigital.BackColor = Color.Black;
             AddDigital.FlatStyle = FlatStyle.Flat;
+            AddDigital.ForeColor = Color.White;
             AddDigital.Location = new Point(461, 190);
             AddDigital.Name = "AddDigital";
             AddDigital.Size = new Size(216, 29);
@@ -387,16 +344,67 @@
             AddDigital.Text = "Add Photo";
             AddDigital.UseVisualStyleBackColor = false;
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Location = new Point(6, 26);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(1299, 158);
+            flowLayoutPanel1.TabIndex = 2;
+            // 
+            // savedigital
+            // 
+            savedigital.BackColor = Color.White;
+            savedigital.FlatAppearance.BorderSize = 2;
+            savedigital.FlatStyle = FlatStyle.Flat;
+            savedigital.Location = new Point(683, 190);
+            savedigital.Name = "savedigital";
+            savedigital.Size = new Size(189, 29);
+            savedigital.TabIndex = 1;
+            savedigital.Text = "Save";
+            savedigital.UseVisualStyleBackColor = false;
+            // 
+            // videogroup
+            // 
+            videogroup.Controls.Add(AddVideo);
+            videogroup.Controls.Add(panel2);
+            videogroup.Controls.Add(savevideo);
+            videogroup.Location = new Point(12, 765);
+            videogroup.Name = "videogroup";
+            videogroup.Size = new Size(1311, 225);
+            videogroup.TabIndex = 19;
+            videogroup.TabStop = false;
+            videogroup.Text = "Video";
+            // 
             // AddVideo
             // 
-            AddVideo.BackColor = Color.LightSeaGreen;
+            AddVideo.BackColor = Color.Black;
             AddVideo.FlatStyle = FlatStyle.Flat;
+            AddVideo.ForeColor = Color.White;
             AddVideo.Location = new Point(461, 190);
             AddVideo.Name = "AddVideo";
             AddVideo.Size = new Size(216, 29);
             AddVideo.TabIndex = 5;
             AddVideo.Text = "Add Video";
             AddVideo.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            panel2.Location = new Point(6, 22);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1299, 162);
+            panel2.TabIndex = 2;
+            // 
+            // savevideo
+            // 
+            savevideo.BackColor = Color.White;
+            savevideo.FlatAppearance.BorderSize = 2;
+            savevideo.FlatStyle = FlatStyle.Flat;
+            savevideo.Location = new Point(683, 190);
+            savevideo.Name = "savevideo";
+            savevideo.Size = new Size(189, 29);
+            savevideo.TabIndex = 1;
+            savevideo.Text = "Save";
+            savevideo.UseVisualStyleBackColor = false;
             // 
             // model
             // 
@@ -409,6 +417,7 @@
             Controls.Add(bookgroup);
             Controls.Add(modelfeatures);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "model";
             Text = "model";
             modelfeatures.ResumeLayout(false);

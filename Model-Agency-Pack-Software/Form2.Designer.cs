@@ -249,9 +249,10 @@
             // 
             Uploadbutton.BackColor = Color.Transparent;
             Uploadbutton.Cursor = Cursors.Hand;
-            Uploadbutton.FlatAppearance.BorderColor = Color.Lime;
-            Uploadbutton.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 255, 128);
-            Uploadbutton.FlatAppearance.MouseOverBackColor = Color.FromArgb(128, 255, 128);
+            Uploadbutton.FlatAppearance.BorderColor = Color.LightSeaGreen;
+            Uploadbutton.FlatAppearance.BorderSize = 2;
+            Uploadbutton.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            Uploadbutton.FlatAppearance.MouseOverBackColor = Color.Aquamarine;
             Uploadbutton.FlatStyle = FlatStyle.Flat;
             Uploadbutton.Location = new Point(1543, 302);
             Uploadbutton.Name = "Uploadbutton";
@@ -386,7 +387,7 @@
             Models.Controls.Add(modelspanel);
             Models.Location = new Point(12, 378);
             Models.Name = "Models";
-            Models.Size = new Size(1740, 370);
+            Models.Size = new Size(1740, 467);
             Models.TabIndex = 1;
             Models.TabStop = false;
             Models.Text = "Models";
@@ -397,7 +398,7 @@
             modelspanel.AutoScroll = true;
             modelspanel.Location = new Point(10, 21);
             modelspanel.Name = "modelspanel";
-            modelspanel.Size = new Size(1724, 343);
+            modelspanel.Size = new Size(1724, 440);
             modelspanel.TabIndex = 0;
             modelspanel.Paint += modelspanel_Paint;
             // 
@@ -406,7 +407,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1764, 746);
+            ClientSize = new Size(1764, 857);
             Controls.Add(Models);
             Controls.Add(Uploadmodel);
             Icon = (Icon)resources.GetObject("$this.Icon");

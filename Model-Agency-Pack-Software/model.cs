@@ -26,9 +26,10 @@ namespace Model_Agency_Pack_Software
 
         private void returntomainpage_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Form1 form1 = new Form1();
             form1.Show();
+            form1.FormClosed += (s, args) => this.Close();
         }
         public void SetModelName(string modelName)
         {

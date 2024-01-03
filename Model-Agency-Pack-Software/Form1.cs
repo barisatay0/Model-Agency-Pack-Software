@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Security.Policy;
@@ -28,6 +29,7 @@ namespace Model_Agency_Pack_Software
         {
             this.Hide();
             Modeleditorpage modeleditorPage = new Modeleditorpage();
+            modeleditorPage.FormClosed += (s, args) => this.Close();
             modeleditorPage.Show();
         }
 
@@ -38,6 +40,28 @@ namespace Model_Agency_Pack_Software
 
         private void models_Enter(object sender, EventArgs e)
         {
+        }
+
+        private void website_Click(object sender, EventArgs e)
+        {
+            OpenWebsite();
+        }
+        private void OpenWebsite()
+        {
+            string url = "https://pack.reepmodel.com";
+            try
+            {
+                ProcessStartInfo psi = new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                };
+                Process.Start(psi);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }
