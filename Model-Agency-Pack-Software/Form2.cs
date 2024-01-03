@@ -45,8 +45,8 @@ namespace Model_Agency_Pack_Software
 
                     PictureBox pictureBox = new PictureBox();
                     pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox.Size = new Size(100, 100);
-                    pictureBox.Location = new Point(10, startingHeight);
+                    pictureBox.Size = new Size(300, 300);
+                    pictureBox.Location = new Point(30, startingHeight);
 
                     if (File.Exists(imageFilePath))
                     {
@@ -59,12 +59,12 @@ namespace Model_Agency_Pack_Software
 
                     Label pathLabel = new Label();
                     pathLabel.Text = modelName;
-                    pathLabel.Location = new Point(120, startingHeight + 40);
+                    pathLabel.Location = new Point(380, startingHeight + 120);
 
                     modelspanel.Controls.Add(pictureBox);
                     modelspanel.Controls.Add(pathLabel);
 
-                    startingHeight += 120;
+                    startingHeight += 320;
                 }
 
 
