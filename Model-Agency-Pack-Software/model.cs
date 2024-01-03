@@ -34,7 +34,14 @@ namespace Model_Agency_Pack_Software
         public void SetModelName(string modelName)
         {
             MessageBox.Show("Selected model: " + modelName);
+            string connectionString = "server=127.0.0.1;port=3306;database=pack;user=root;";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            connection.Open();
+            string selectQuery = "SELECT * FROM items WHERE name = @modelName";
+            MySqlCommand command = new MySqlCommand(selectQuery, connection);
+            command.Parameters.AddWithValue("@modelName", modelName);
         }
+
     }
 
 }
