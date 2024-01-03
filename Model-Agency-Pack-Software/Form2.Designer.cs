@@ -410,6 +410,8 @@
             Controls.Add(Models);
             Controls.Add(Uploadmodel);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MdiChildrenMinimizedAnchorBottom = false;
             Name = "Modeleditorpage";
             Text = "Editor Page";
             Load += Modeleditorpage_Load;

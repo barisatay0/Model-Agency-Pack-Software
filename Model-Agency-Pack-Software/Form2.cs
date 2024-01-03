@@ -33,8 +33,8 @@ namespace Model_Agency_Pack_Software
                 MySqlCommand command = new MySqlCommand(selectQuery, connection);
                 MySqlDataReader reader = command.ExecuteReader();
 
-                int verticalSpacing = 20;
-                int startingHeight = 20;
+                int verticalSpacing = 10;
+                int startingHeight = 0;
 
                 while (reader.Read())
                 {
@@ -45,8 +45,8 @@ namespace Model_Agency_Pack_Software
 
                     PictureBox pictureBox = new PictureBox();
                     pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox.Size = new Size(300, 300);
-                    pictureBox.Location = new Point(30, startingHeight);
+                    pictureBox.Size = new Size(600, 600);
+                    pictureBox.Location = new Point(600, startingHeight);
 
                     if (File.Exists(imageFilePath))
                     {
@@ -57,16 +57,27 @@ namespace Model_Agency_Pack_Software
                         MessageBox.Show("Dosya bulunamadı: " + imageFilePath);
                     }
 
-                    Label pathLabel = new Label();
-                    pathLabel.Text = modelName;
-                    pathLabel.Location = new Point(380, startingHeight + 120);
-
                     modelspanel.Controls.Add(pictureBox);
-                    modelspanel.Controls.Add(pathLabel);
 
-                    startingHeight += 320;
+                    Button modelButton = new Button();
+                    modelButton.Text = modelName;
+                    modelButton.BackColor = Color.Black;
+                    modelButton.ForeColor = Color.White;
+
+                    modelButton.Width = 600;
+                    modelButton.Height = 35;
+
+                    modelButton.Location = new Point(600, startingHeight + pictureBox.Height);
+                    modelButton.Click += (s, ev) =>
+                    {
+                        MessageBox.Show("Clicked on: " + modelName);
+                        // Additional actions upon clicking the button
+                    };
+
+                    modelspanel.Controls.Add(modelButton);
+
+                    startingHeight = pictureBox.Location.Y + pictureBox.Height + 10;
                 }
-
 
 
                 reader.Close();
