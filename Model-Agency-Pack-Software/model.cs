@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+
 
 namespace Model_Agency_Pack_Software
 {
@@ -28,5 +30,10 @@ namespace Model_Agency_Pack_Software
             Form1 form1 = new Form1();
             form1.Show();
         }
+        public void SetModelName(string modelName)
+        {
+            MessageBox.Show("Selected model: " + modelName);
+        }
     }
+
 }

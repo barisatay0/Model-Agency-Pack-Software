@@ -70,8 +70,11 @@ namespace Model_Agency_Pack_Software
                     modelButton.Location = new Point(600, startingHeight + pictureBox.Height);
                     modelButton.Click += (s, ev) =>
                     {
-                        MessageBox.Show("Clicked on: " + modelName);
-                        // Additional actions upon clicking the button
+                        string selectedModel = modelName;
+                        model modelForm = new model();
+                        modelForm.SetModelName(selectedModel);
+                        modelForm.Show();
+                        this.Hide();
                     };
 
                     modelspanel.Controls.Add(modelButton);
