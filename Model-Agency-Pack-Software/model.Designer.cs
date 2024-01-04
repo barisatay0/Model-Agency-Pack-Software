@@ -50,14 +50,10 @@
             updatebutton = new Button();
             bookgroup = new GroupBox();
             addbook = new Button();
-            button2 = new Button();
-            button3 = new Button();
             bookpanel = new Panel();
-            savebook = new Button();
             digitalgroup = new GroupBox();
             digitalpanel = new Panel();
             AddDigital = new Button();
-            savedigital = new Button();
             modelfeatures.SuspendLayout();
             bookgroup.SuspendLayout();
             digitalgroup.SuspendLayout();
@@ -83,6 +79,7 @@
             Newimagebutton.TabIndex = 1;
             Newimagebutton.Text = "New İmage";
             Newimagebutton.UseVisualStyleBackColor = false;
+            Newimagebutton.Click += Newimagebutton_Click;
             // 
             // Namelabel
             // 
@@ -258,10 +255,7 @@
             // bookgroup
             // 
             bookgroup.Controls.Add(addbook);
-            bookgroup.Controls.Add(button2);
-            bookgroup.Controls.Add(button3);
             bookgroup.Controls.Add(bookpanel);
-            bookgroup.Controls.Add(savebook);
             bookgroup.ForeColor = SystemColors.ControlText;
             bookgroup.Location = new Point(12, 303);
             bookgroup.Name = "bookgroup";
@@ -277,32 +271,11 @@
             addbook.ForeColor = Color.White;
             addbook.Location = new Point(461, 250);
             addbook.Name = "addbook";
-            addbook.Size = new Size(216, 29);
+            addbook.Size = new Size(411, 29);
             addbook.TabIndex = 4;
             addbook.Text = "Add Photo";
             addbook.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.LightGreen;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(488, 250);
-            button2.Name = "button2";
-            button2.Size = new Size(189, 29);
-            button2.TabIndex = 3;
-            button2.Text = "Save";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.LightGreen;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Location = new Point(488, 250);
-            button3.Name = "button3";
-            button3.Size = new Size(189, 29);
-            button3.TabIndex = 2;
-            button3.Text = "Save";
-            button3.UseVisualStyleBackColor = false;
+            addbook.Click += addbook_Click;
             // 
             // bookpanel
             // 
@@ -312,23 +285,10 @@
             bookpanel.Size = new Size(1299, 222);
             bookpanel.TabIndex = 1;
             // 
-            // savebook
-            // 
-            savebook.BackColor = Color.White;
-            savebook.FlatAppearance.BorderSize = 2;
-            savebook.FlatStyle = FlatStyle.Flat;
-            savebook.Location = new Point(683, 250);
-            savebook.Name = "savebook";
-            savebook.Size = new Size(189, 29);
-            savebook.TabIndex = 0;
-            savebook.Text = "Save";
-            savebook.UseVisualStyleBackColor = false;
-            // 
             // digitalgroup
             // 
             digitalgroup.Controls.Add(digitalpanel);
             digitalgroup.Controls.Add(AddDigital);
-            digitalgroup.Controls.Add(savedigital);
             digitalgroup.Location = new Point(12, 594);
             digitalgroup.Name = "digitalgroup";
             digitalgroup.Size = new Size(1311, 285);
@@ -351,22 +311,11 @@
             AddDigital.ForeColor = Color.White;
             AddDigital.Location = new Point(461, 249);
             AddDigital.Name = "AddDigital";
-            AddDigital.Size = new Size(216, 29);
+            AddDigital.Size = new Size(411, 29);
             AddDigital.TabIndex = 5;
             AddDigital.Text = "Add Photo";
             AddDigital.UseVisualStyleBackColor = false;
-            // 
-            // savedigital
-            // 
-            savedigital.BackColor = Color.White;
-            savedigital.FlatAppearance.BorderSize = 2;
-            savedigital.FlatStyle = FlatStyle.Flat;
-            savedigital.Location = new Point(683, 249);
-            savedigital.Name = "savedigital";
-            savedigital.Size = new Size(189, 29);
-            savedigital.TabIndex = 1;
-            savedigital.Text = "Save";
-            savedigital.UseVisualStyleBackColor = false;
+            AddDigital.Click += AddDigital_Click;
             // 
             // model
             // 
@@ -410,13 +359,9 @@
         private Button updatebutton;
         private GroupBox bookgroup;
         private GroupBox digitalgroup;
-        private Button savebook;
-        private Button savedigital;
         private Button returntomainpage;
         private Panel bookpanel;
         private Button addbook;
-        private Button button2;
-        private Button button3;
         private Button AddDigital;
         private Panel digitalpanel;
     }

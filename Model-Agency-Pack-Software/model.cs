@@ -179,6 +179,21 @@ namespace Model_Agency_Pack_Software
             }
 
         }
+
+        private void addbook_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddDigital_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Newimagebutton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
