@@ -38,13 +38,13 @@
             hipslabel = new Label();
             shoeslabel = new Label();
             eyeslabel = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
+            Nametext = new TextBox();
+            Heighttext = new TextBox();
+            Chesttext = new TextBox();
+            Waisttext = new TextBox();
+            Hipstext = new TextBox();
+            Shoestext = new TextBox();
+            Eyestext = new TextBox();
             modelfeatures = new GroupBox();
             returntomainpage = new Button();
             updatebutton = new Button();
@@ -52,16 +52,16 @@
             addbook = new Button();
             button2 = new Button();
             button3 = new Button();
-            panel1 = new Panel();
+            bookpanel = new Panel();
             savebook = new Button();
             digitalgroup = new GroupBox();
             AddDigital = new Button();
-            flowLayoutPanel1 = new FlowLayoutPanel();
             savedigital = new Button();
             videogroup = new GroupBox();
             AddVideo = new Button();
-            panel2 = new Panel();
+            videopanel = new Panel();
             savevideo = new Button();
+            digitalpanel = new Panel();
             modelfeatures.SuspendLayout();
             bookgroup.SuspendLayout();
             digitalgroup.SuspendLayout();
@@ -148,78 +148,85 @@
             eyeslabel.AutoSize = true;
             eyeslabel.Location = new Point(1018, 129);
             eyeslabel.Name = "eyeslabel";
-            eyeslabel.Size = new Size(49, 20);
+            eyeslabel.Size = new Size(38, 20);
             eyeslabel.TabIndex = 8;
-            eyeslabel.Text = "Name";
+            eyeslabel.Text = "Eyes";
             eyeslabel.Click += eyeslabel_Click;
             // 
-            // textBox1
+            // Nametext
             // 
-            textBox1.Location = new Point(199, 163);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 9;
+            Nametext.Location = new Point(199, 163);
+            Nametext.Name = "Nametext";
+            Nametext.Size = new Size(125, 27);
+            Nametext.TabIndex = 9;
+            Nametext.TextChanged += Nametext_TextChanged;
             // 
-            // textBox2
+            // Heighttext
             // 
-            textBox2.Location = new Point(330, 163);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 10;
+            Heighttext.Location = new Point(330, 163);
+            Heighttext.Name = "Heighttext";
+            Heighttext.Size = new Size(125, 27);
+            Heighttext.TabIndex = 10;
+            Heighttext.TextChanged += Heighttext_TextChanged;
             // 
-            // textBox3
+            // Chesttext
             // 
-            textBox3.Location = new Point(461, 163);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 11;
+            Chesttext.Location = new Point(461, 163);
+            Chesttext.Name = "Chesttext";
+            Chesttext.Size = new Size(125, 27);
+            Chesttext.TabIndex = 11;
+            Chesttext.TextChanged += Chesttext_TextChanged;
             // 
-            // textBox4
+            // Waisttext
             // 
-            textBox4.Location = new Point(592, 163);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 27);
-            textBox4.TabIndex = 12;
+            Waisttext.Location = new Point(592, 163);
+            Waisttext.Name = "Waisttext";
+            Waisttext.Size = new Size(125, 27);
+            Waisttext.TabIndex = 12;
+            Waisttext.TextChanged += Waisttext_TextChanged;
             // 
-            // textBox5
+            // Hipstext
             // 
-            textBox5.Location = new Point(723, 163);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(125, 27);
-            textBox5.TabIndex = 13;
+            Hipstext.Location = new Point(723, 163);
+            Hipstext.Name = "Hipstext";
+            Hipstext.Size = new Size(125, 27);
+            Hipstext.TabIndex = 13;
+            Hipstext.TextChanged += Hipstext_TextChanged;
             // 
-            // textBox6
+            // Shoestext
             // 
-            textBox6.Location = new Point(854, 163);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(125, 27);
-            textBox6.TabIndex = 14;
+            Shoestext.Location = new Point(854, 163);
+            Shoestext.Name = "Shoestext";
+            Shoestext.Size = new Size(125, 27);
+            Shoestext.TabIndex = 14;
+            Shoestext.TextChanged += Shoestext_TextChanged;
             // 
-            // textBox7
+            // Eyestext
             // 
-            textBox7.Location = new Point(985, 163);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(125, 27);
-            textBox7.TabIndex = 15;
+            Eyestext.Location = new Point(985, 163);
+            Eyestext.Name = "Eyestext";
+            Eyestext.Size = new Size(125, 27);
+            Eyestext.TabIndex = 15;
+            Eyestext.TextChanged += Eyestext_TextChanged;
             // 
             // modelfeatures
             // 
             modelfeatures.Controls.Add(returntomainpage);
             modelfeatures.Controls.Add(updatebutton);
             modelfeatures.Controls.Add(Newimagebutton);
-            modelfeatures.Controls.Add(textBox7);
+            modelfeatures.Controls.Add(Eyestext);
             modelfeatures.Controls.Add(Selectimagelabel);
-            modelfeatures.Controls.Add(textBox6);
+            modelfeatures.Controls.Add(Shoestext);
             modelfeatures.Controls.Add(Namelabel);
-            modelfeatures.Controls.Add(textBox5);
+            modelfeatures.Controls.Add(Hipstext);
             modelfeatures.Controls.Add(Heightlabel);
-            modelfeatures.Controls.Add(textBox4);
+            modelfeatures.Controls.Add(Waisttext);
             modelfeatures.Controls.Add(Chestbustlabel);
-            modelfeatures.Controls.Add(textBox3);
+            modelfeatures.Controls.Add(Chesttext);
             modelfeatures.Controls.Add(waistlabel);
-            modelfeatures.Controls.Add(textBox2);
+            modelfeatures.Controls.Add(Heighttext);
             modelfeatures.Controls.Add(hipslabel);
-            modelfeatures.Controls.Add(textBox1);
+            modelfeatures.Controls.Add(Nametext);
             modelfeatures.Controls.Add(shoeslabel);
             modelfeatures.Controls.Add(eyeslabel);
             modelfeatures.Location = new Point(12, 12);
@@ -251,13 +258,14 @@
             updatebutton.TabIndex = 16;
             updatebutton.Text = "Update Features";
             updatebutton.UseVisualStyleBackColor = false;
+            updatebutton.Click += updatebutton_Click;
             // 
             // bookgroup
             // 
             bookgroup.Controls.Add(addbook);
             bookgroup.Controls.Add(button2);
             bookgroup.Controls.Add(button3);
-            bookgroup.Controls.Add(panel1);
+            bookgroup.Controls.Add(bookpanel);
             bookgroup.Controls.Add(savebook);
             bookgroup.ForeColor = SystemColors.ControlText;
             bookgroup.Location = new Point(12, 303);
@@ -301,12 +309,12 @@
             button3.Text = "Save";
             button3.UseVisualStyleBackColor = false;
             // 
-            // panel1
+            // bookpanel
             // 
-            panel1.Location = new Point(6, 22);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1299, 162);
-            panel1.TabIndex = 1;
+            bookpanel.Location = new Point(6, 22);
+            bookpanel.Name = "bookpanel";
+            bookpanel.Size = new Size(1299, 162);
+            bookpanel.TabIndex = 1;
             // 
             // savebook
             // 
@@ -322,8 +330,8 @@
             // 
             // digitalgroup
             // 
+            digitalgroup.Controls.Add(digitalpanel);
             digitalgroup.Controls.Add(AddDigital);
-            digitalgroup.Controls.Add(flowLayoutPanel1);
             digitalgroup.Controls.Add(savedigital);
             digitalgroup.Location = new Point(12, 534);
             digitalgroup.Name = "digitalgroup";
@@ -344,13 +352,6 @@
             AddDigital.Text = "Add Photo";
             AddDigital.UseVisualStyleBackColor = false;
             // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.Location = new Point(6, 26);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1299, 158);
-            flowLayoutPanel1.TabIndex = 2;
-            // 
             // savedigital
             // 
             savedigital.BackColor = Color.White;
@@ -366,7 +367,7 @@
             // videogroup
             // 
             videogroup.Controls.Add(AddVideo);
-            videogroup.Controls.Add(panel2);
+            videogroup.Controls.Add(videopanel);
             videogroup.Controls.Add(savevideo);
             videogroup.Location = new Point(12, 765);
             videogroup.Name = "videogroup";
@@ -387,12 +388,12 @@
             AddVideo.Text = "Add Video";
             AddVideo.UseVisualStyleBackColor = false;
             // 
-            // panel2
+            // videopanel
             // 
-            panel2.Location = new Point(6, 22);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1299, 162);
-            panel2.TabIndex = 2;
+            videopanel.Location = new Point(6, 22);
+            videopanel.Name = "videopanel";
+            videopanel.Size = new Size(1299, 162);
+            videopanel.TabIndex = 2;
             // 
             // savevideo
             // 
@@ -405,6 +406,13 @@
             savevideo.TabIndex = 1;
             savevideo.Text = "Save";
             savevideo.UseVisualStyleBackColor = false;
+            // 
+            // digitalpanel
+            // 
+            digitalpanel.Location = new Point(6, 22);
+            digitalpanel.Name = "digitalpanel";
+            digitalpanel.Size = new Size(1299, 162);
+            digitalpanel.TabIndex = 6;
             // 
             // model
             // 
@@ -439,13 +447,13 @@
         private Label hipslabel;
         private Label shoeslabel;
         private Label eyeslabel;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
+        private TextBox Nametext;
+        private TextBox Heighttext;
+        private TextBox Chesttext;
+        private TextBox Waisttext;
+        private TextBox Hipstext;
+        private TextBox Shoestext;
+        private TextBox Eyestext;
         private GroupBox modelfeatures;
         private Button updatebutton;
         private GroupBox bookgroup;
@@ -455,13 +463,13 @@
         private GroupBox videogroup;
         private Button savevideo;
         private Button returntomainpage;
-        private Panel panel1;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private Panel panel2;
+        private Panel bookpanel;
+        private Panel videopanel;
         private Button addbook;
         private Button button2;
         private Button button3;
         private Button AddDigital;
         private Button AddVideo;
+        private Panel digitalpanel;
     }
 }
