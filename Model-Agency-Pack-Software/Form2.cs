@@ -132,9 +132,11 @@ namespace Model_Agency_Pack_Software
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 bookFilePaths.AddRange(openFileDialog1.FileNames);
-                foreach (string fileName in openFileDialog1.FileNames)
+                foreach (string fileName in bookFilePaths)
                 {
-                    Console.WriteLine(fileName);
+                    string destinationPath = @"C:\xampp\htdocs\data\" + Path.GetFileName(fileName);
+                    File.Copy(fileName, destinationPath, true);
+                    Console.WriteLine("File copied to: " + destinationPath);
                 }
 
             }
@@ -151,9 +153,11 @@ namespace Model_Agency_Pack_Software
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 digitalFilePaths.AddRange(openFileDialog1.FileNames);
-                foreach (string fileName in openFileDialog1.FileNames)
+                foreach (string fileName in digitalFilePaths)
                 {
-                    Console.WriteLine(fileName);
+                    string destinationPath = @"C:\xampp\htdocs\data\" + Path.GetFileName(fileName);
+                    File.Copy(fileName, destinationPath, true);
+                    Console.WriteLine("File copied to: " + destinationPath);
                 }
             }
         }
@@ -169,9 +173,11 @@ namespace Model_Agency_Pack_Software
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 videoFilePaths.AddRange(openFileDialog1.FileNames);
-                foreach (string fileName in openFileDialog1.FileNames)
+                foreach (string fileName in videoFilePaths)
                 {
-                    Console.WriteLine(fileName);
+                    string destinationPath = @"C:\xampp\htdocs\data\" + Path.GetFileName(fileName);
+                    File.Copy(fileName, destinationPath, true);
+                    Console.WriteLine("File copied to: " + destinationPath);
                 }
             }
         }

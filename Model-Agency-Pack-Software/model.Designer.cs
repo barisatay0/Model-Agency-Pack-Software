@@ -55,17 +55,12 @@
             bookpanel = new Panel();
             savebook = new Button();
             digitalgroup = new GroupBox();
+            digitalpanel = new Panel();
             AddDigital = new Button();
             savedigital = new Button();
-            videogroup = new GroupBox();
-            AddVideo = new Button();
-            videopanel = new Panel();
-            savevideo = new Button();
-            digitalpanel = new Panel();
             modelfeatures.SuspendLayout();
             bookgroup.SuspendLayout();
             digitalgroup.SuspendLayout();
-            videogroup.SuspendLayout();
             SuspendLayout();
             // 
             // Selectimagelabel
@@ -270,7 +265,7 @@
             bookgroup.ForeColor = SystemColors.ControlText;
             bookgroup.Location = new Point(12, 303);
             bookgroup.Name = "bookgroup";
-            bookgroup.Size = new Size(1311, 225);
+            bookgroup.Size = new Size(1311, 285);
             bookgroup.TabIndex = 17;
             bookgroup.TabStop = false;
             bookgroup.Text = "Book";
@@ -280,7 +275,7 @@
             addbook.BackColor = Color.Black;
             addbook.FlatStyle = FlatStyle.Flat;
             addbook.ForeColor = Color.White;
-            addbook.Location = new Point(461, 190);
+            addbook.Location = new Point(461, 250);
             addbook.Name = "addbook";
             addbook.Size = new Size(216, 29);
             addbook.TabIndex = 4;
@@ -291,7 +286,7 @@
             // 
             button2.BackColor = Color.LightGreen;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(488, 190);
+            button2.Location = new Point(488, 250);
             button2.Name = "button2";
             button2.Size = new Size(189, 29);
             button2.TabIndex = 3;
@@ -302,7 +297,7 @@
             // 
             button3.BackColor = Color.LightGreen;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Location = new Point(488, 190);
+            button3.Location = new Point(488, 250);
             button3.Name = "button3";
             button3.Size = new Size(189, 29);
             button3.TabIndex = 2;
@@ -311,9 +306,10 @@
             // 
             // bookpanel
             // 
+            bookpanel.AutoScroll = true;
             bookpanel.Location = new Point(6, 22);
             bookpanel.Name = "bookpanel";
-            bookpanel.Size = new Size(1299, 162);
+            bookpanel.Size = new Size(1299, 222);
             bookpanel.TabIndex = 1;
             // 
             // savebook
@@ -321,7 +317,7 @@
             savebook.BackColor = Color.White;
             savebook.FlatAppearance.BorderSize = 2;
             savebook.FlatStyle = FlatStyle.Flat;
-            savebook.Location = new Point(683, 190);
+            savebook.Location = new Point(683, 250);
             savebook.Name = "savebook";
             savebook.Size = new Size(189, 29);
             savebook.TabIndex = 0;
@@ -333,19 +329,27 @@
             digitalgroup.Controls.Add(digitalpanel);
             digitalgroup.Controls.Add(AddDigital);
             digitalgroup.Controls.Add(savedigital);
-            digitalgroup.Location = new Point(12, 534);
+            digitalgroup.Location = new Point(12, 594);
             digitalgroup.Name = "digitalgroup";
-            digitalgroup.Size = new Size(1311, 225);
+            digitalgroup.Size = new Size(1311, 285);
             digitalgroup.TabIndex = 18;
             digitalgroup.TabStop = false;
             digitalgroup.Text = "Digital";
+            // 
+            // digitalpanel
+            // 
+            digitalpanel.AutoScroll = true;
+            digitalpanel.Location = new Point(6, 22);
+            digitalpanel.Name = "digitalpanel";
+            digitalpanel.Size = new Size(1299, 221);
+            digitalpanel.TabIndex = 6;
             // 
             // AddDigital
             // 
             AddDigital.BackColor = Color.Black;
             AddDigital.FlatStyle = FlatStyle.Flat;
             AddDigital.ForeColor = Color.White;
-            AddDigital.Location = new Point(461, 190);
+            AddDigital.Location = new Point(461, 249);
             AddDigital.Name = "AddDigital";
             AddDigital.Size = new Size(216, 29);
             AddDigital.TabIndex = 5;
@@ -357,70 +361,19 @@
             savedigital.BackColor = Color.White;
             savedigital.FlatAppearance.BorderSize = 2;
             savedigital.FlatStyle = FlatStyle.Flat;
-            savedigital.Location = new Point(683, 190);
+            savedigital.Location = new Point(683, 249);
             savedigital.Name = "savedigital";
             savedigital.Size = new Size(189, 29);
             savedigital.TabIndex = 1;
             savedigital.Text = "Save";
             savedigital.UseVisualStyleBackColor = false;
             // 
-            // videogroup
-            // 
-            videogroup.Controls.Add(AddVideo);
-            videogroup.Controls.Add(videopanel);
-            videogroup.Controls.Add(savevideo);
-            videogroup.Location = new Point(12, 765);
-            videogroup.Name = "videogroup";
-            videogroup.Size = new Size(1311, 225);
-            videogroup.TabIndex = 19;
-            videogroup.TabStop = false;
-            videogroup.Text = "Video";
-            // 
-            // AddVideo
-            // 
-            AddVideo.BackColor = Color.Black;
-            AddVideo.FlatStyle = FlatStyle.Flat;
-            AddVideo.ForeColor = Color.White;
-            AddVideo.Location = new Point(461, 190);
-            AddVideo.Name = "AddVideo";
-            AddVideo.Size = new Size(216, 29);
-            AddVideo.TabIndex = 5;
-            AddVideo.Text = "Add Video";
-            AddVideo.UseVisualStyleBackColor = false;
-            // 
-            // videopanel
-            // 
-            videopanel.Location = new Point(6, 22);
-            videopanel.Name = "videopanel";
-            videopanel.Size = new Size(1299, 162);
-            videopanel.TabIndex = 2;
-            // 
-            // savevideo
-            // 
-            savevideo.BackColor = Color.White;
-            savevideo.FlatAppearance.BorderSize = 2;
-            savevideo.FlatStyle = FlatStyle.Flat;
-            savevideo.Location = new Point(683, 190);
-            savevideo.Name = "savevideo";
-            savevideo.Size = new Size(189, 29);
-            savevideo.TabIndex = 1;
-            savevideo.Text = "Save";
-            savevideo.UseVisualStyleBackColor = false;
-            // 
-            // digitalpanel
-            // 
-            digitalpanel.Location = new Point(6, 22);
-            digitalpanel.Name = "digitalpanel";
-            digitalpanel.Size = new Size(1299, 162);
-            digitalpanel.TabIndex = 6;
-            // 
             // model
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1335, 1055);
-            Controls.Add(videogroup);
+            ClientSize = new Size(1335, 884);
             Controls.Add(digitalgroup);
             Controls.Add(bookgroup);
             Controls.Add(modelfeatures);
@@ -432,7 +385,6 @@
             modelfeatures.PerformLayout();
             bookgroup.ResumeLayout(false);
             digitalgroup.ResumeLayout(false);
-            videogroup.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -460,16 +412,12 @@
         private GroupBox digitalgroup;
         private Button savebook;
         private Button savedigital;
-        private GroupBox videogroup;
-        private Button savevideo;
         private Button returntomainpage;
         private Panel bookpanel;
-        private Panel videopanel;
         private Button addbook;
         private Button button2;
         private Button button3;
         private Button AddDigital;
-        private Button AddVideo;
         private Panel digitalpanel;
     }
 }

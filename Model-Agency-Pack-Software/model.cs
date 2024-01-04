@@ -60,38 +60,39 @@ namespace Model_Agency_Pack_Software
                     string[] bookPhotoList = bookPhotos.Split(',');
                     string[] digitalPhotoList = digitalPhotos.Split(',');
                     string photoDirectory = @"C:\xampp\htdocs\data\";
+
+                    int pictureBoxHeight = 100;
+                    int spacing = 10;
+                    int currentY = 0;
+
                     bookpanel.Controls.Clear();
                     foreach (string photoName in bookPhotoList)
                     {
-                        string photoPath = System.IO.Path.Combine(photoDirectory, photoName.Trim());
-                        if (System.IO.File.Exists(photoPath))
-                        {
-                            PictureBox pb = new PictureBox();
-                            pb.Image = Image.FromFile(photoPath);
-                            pb.SizeMode = PictureBoxSizeMode.Zoom;
-                            bookpanel.Controls.Add(pb);
-                        }
-                        else
-                        {
-                            MessageBox.Show($"Photo not found: {photoPath}");
-                        }
+                        PictureBox pb = new PictureBox();
+                        pb.Image = Image.FromFile(System.IO.Path.Combine(photoDirectory, photoName.Trim()));
+                        pb.SizeMode = PictureBoxSizeMode.Zoom;
+                        pb.Height = pictureBoxHeight;
+                        pb.Width = bookpanel.Width - 50;
+                        pb.Location = new Point(0, currentY);
+
+                        bookpanel.Controls.Add(pb);
+                        currentY += pictureBoxHeight + spacing;
                     }
+
+                    currentY = 0;
 
                     digitalpanel.Controls.Clear();
                     foreach (string photoName in digitalPhotoList)
                     {
-                        string photoPath = System.IO.Path.Combine(photoDirectory, photoName.Trim());
-                        if (System.IO.File.Exists(photoPath))
-                        {
-                            PictureBox pb = new PictureBox();
-                            pb.Image = Image.FromFile(photoPath);
-                            pb.SizeMode = PictureBoxSizeMode.Zoom;
-                            digitalpanel.Controls.Add(pb);
-                        }
-                        else
-                        {
-                            MessageBox.Show($"Photo not found: {photoPath}");
-                        }
+                        PictureBox pb = new PictureBox();
+                        pb.Image = Image.FromFile(System.IO.Path.Combine(photoDirectory, photoName.Trim()));
+                        pb.SizeMode = PictureBoxSizeMode.Zoom;
+                        pb.Height = pictureBoxHeight;
+                        pb.Width = digitalpanel.Width - 50;
+                        pb.Location = new Point(0, currentY);
+
+                        digitalpanel.Controls.Add(pb);
+                        currentY += pictureBoxHeight + spacing;
                     }
                 }
                 else
