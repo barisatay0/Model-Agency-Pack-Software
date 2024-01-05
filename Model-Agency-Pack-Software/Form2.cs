@@ -341,7 +341,6 @@ namespace Model_Agency_Pack_Software
             catch (Exception ex)
             {
                 Console.WriteLine("Error while copying files: " + ex.Message);
-                MessageBox.Show("Error while copying files: " + ex.Message);
             }
         }
 
