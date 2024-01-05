@@ -191,7 +191,7 @@ namespace Model_Agency_Pack_Software
             {
                 foreach (string fileName in openFileDialog.FileNames)
                 {
-                    string photoExtension = System.IO.Path.GetExtension(fileName);
+                      string photoExtension = System.IO.Path.GetExtension(fileName);
                     string photoName = Guid.NewGuid().ToString() + photoExtension;
                     string photoDirectory = @"C:\xampp\htdocs\data\";
                     string destinationPath = System.IO.Path.Combine(photoDirectory, photoName);

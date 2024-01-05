@@ -103,19 +103,32 @@ namespace Model_Agency_Pack_Software
         List<string> bookFilePaths = new List<string>();
         List<string> digitalFilePaths = new List<string>();
         List<string> videoFilePaths = new List<string>();
+        List<string> uniqueImageNames = new List<string>();
+        List<string> uniqueBookNames = new List<string>();
+        List<string> uniqueDigitalNames = new List<string>();
+        List<string> uniqueVideoNames = new List<string>();
+
         private void imagebutton_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            OpenFileDialog imageDialog = new OpenFileDialog();
+            imageDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp"; 
+            imageDialog.Title = "Select Image Files";
+            imageDialog.Multiselect = true;
 
-            openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
-            openFileDialog1.Title = "Select an Image File";
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (imageDialog.ShowDialog() == DialogResult.OK)
             {
-                imageFilePaths.AddRange(openFileDialog1.FileNames);
-                foreach (string fileName in openFileDialog1.FileNames)
+                foreach (string fileName in imageDialog.FileNames)
                 {
-                    Console.WriteLine(fileName);
+                    string uniqueName = Guid.NewGuid().ToString(); 
+                    string fileExtension = Path.GetExtension(fileName);
+
+                    string destinationPath = @"C:\xampp\htdocs\data\" + uniqueName + fileExtension;
+
+                    File.Copy(fileName, destinationPath, true);
+                    Console.WriteLine("File copied to: " + destinationPath);
+
+                    imageFilePaths.Add(destinationPath);
+                    uniqueImageNames.Add(uniqueName + fileExtension);
                 }
             }
 
@@ -123,61 +136,76 @@ namespace Model_Agency_Pack_Software
 
         private void Bookbutton_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            OpenFileDialog bookDialog = new OpenFileDialog();
+            bookDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            bookDialog.Title = "Select Book Files";
+            bookDialog.Multiselect = true;
 
-            openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
-            openFileDialog1.Title = "Select Image Files";
-            openFileDialog1.Multiselect = true;
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (bookDialog.ShowDialog() == DialogResult.OK)
             {
-                bookFilePaths.AddRange(openFileDialog1.FileNames);
-                foreach (string fileName in bookFilePaths)
+                foreach (string fileName in bookDialog.FileNames)
                 {
-                    string destinationPath = @"C:\xampp\htdocs\data\" + Path.GetFileName(fileName);
+                    string uniqueName = Guid.NewGuid().ToString();
+                    string fileExtension = Path.GetExtension(fileName);
+
+                    string destinationPath = @"C:\xampp\htdocs\data\" + uniqueName + fileExtension;
+
                     File.Copy(fileName, destinationPath, true);
                     Console.WriteLine("File copied to: " + destinationPath);
-                }
 
+                    bookFilePaths.Add(destinationPath);
+                    uniqueBookNames.Add(uniqueName + fileExtension);
+                }
             }
+
         }
 
         private void Digitalbutton_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            OpenFileDialog digitalDialog = new OpenFileDialog();
+            digitalDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            digitalDialog.Title = "Select Digital Files";
+            digitalDialog.Multiselect = true;
 
-            openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
-            openFileDialog1.Title = "Select Image Files";
-            openFileDialog1.Multiselect = true;
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (digitalDialog.ShowDialog() == DialogResult.OK)
             {
-                digitalFilePaths.AddRange(openFileDialog1.FileNames);
-                foreach (string fileName in digitalFilePaths)
+                foreach (string fileName in digitalDialog.FileNames)
                 {
-                    string destinationPath = @"C:\xampp\htdocs\data\" + Path.GetFileName(fileName);
+                    string uniqueName = Guid.NewGuid().ToString(); 
+                    string fileExtension = Path.GetExtension(fileName); 
+
+                    string destinationPath = @"C:\xampp\htdocs\data\" + uniqueName + fileExtension;
+
                     File.Copy(fileName, destinationPath, true);
                     Console.WriteLine("File copied to: " + destinationPath);
+
+                    digitalFilePaths.Add(destinationPath);
+                    uniqueDigitalNames.Add(uniqueName + fileExtension);
                 }
             }
         }
 
         private void Videobutton_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            OpenFileDialog videoDialog = new OpenFileDialog();
+            videoDialog.Filter = "Video Files|*.mp4;*.wmv;*.wm;*.mov;*.mov"; 
+            videoDialog.Title = "Select Video Files";
+            videoDialog.Multiselect = true;
 
-            openFileDialog1.Filter = "Video Files|*.mp4;*.wmv;*.wm;*.mov;*.mov";
-            openFileDialog1.Title = "Select Video Files";
-            openFileDialog1.Multiselect = true;
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (videoDialog.ShowDialog() == DialogResult.OK)
             {
-                videoFilePaths.AddRange(openFileDialog1.FileNames);
-                foreach (string fileName in videoFilePaths)
+                foreach (string fileName in videoDialog.FileNames)
                 {
-                    string destinationPath = @"C:\xampp\htdocs\data\" + Path.GetFileName(fileName);
+                    string uniqueName = Guid.NewGuid().ToString();
+                    string fileExtension = Path.GetExtension(fileName); 
+
+                    string destinationPath = @"C:\xampp\htdocs\data\" + uniqueName + fileExtension;
+
                     File.Copy(fileName, destinationPath, true);
                     Console.WriteLine("File copied to: " + destinationPath);
+
+                    videoFilePaths.Add(destinationPath);
+                    uniqueVideoNames.Add(uniqueName + fileExtension); 
                 }
             }
         }
@@ -213,10 +241,10 @@ namespace Model_Agency_Pack_Software
                 command.Parameters.AddWithValue("@Instagram", instagram);
 
 
-                command.Parameters.AddWithValue("@Image", string.Join(",", imageFilePaths.Select(Path.GetFileName)));
-                command.Parameters.AddWithValue("@Book", string.Join(",", bookFilePaths.Select(Path.GetFileName)));
-                command.Parameters.AddWithValue("@Digital", string.Join(",", digitalFilePaths.Select(Path.GetFileName)));
-                command.Parameters.AddWithValue("@Video", string.Join(",", videoFilePaths.Select(Path.GetFileName)));
+                command.Parameters.AddWithValue("@Image", string.Join(",", uniqueImageNames));
+                command.Parameters.AddWithValue("@Book", string.Join(",", uniqueBookNames));
+                command.Parameters.AddWithValue("@Digital", string.Join(",", uniqueDigitalNames));
+                command.Parameters.AddWithValue("@Video", string.Join(",", uniqueVideoNames));
 
                 int affectedRows = command.ExecuteNonQuery();
 
