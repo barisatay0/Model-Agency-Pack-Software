@@ -42,8 +42,8 @@ namespace Model_Agency_Pack_Software
 
                 PictureBox pictureBox = new PictureBox();
                 pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBox.Width = 300;
-                pictureBox.Height = 400;
+                pictureBox.Width = 200;
+                pictureBox.Height = 300;
                 pictureBox.Location = new Point(pictureBoxLeft, pictureBoxTop);
 
                 try
@@ -72,6 +72,26 @@ namespace Model_Agency_Pack_Software
                     pictureBoxLeft = 10;
                     pictureBoxTop += pictureBox.Height + label.Height + 10;
                 }
+                CheckBox checkBox = new CheckBox();
+                checkBox.Text = "Select";
+                checkBox.Location = new Point(pictureBoxLeft, pictureBoxTop + pictureBox.Height + 20);
+                checkBox.CheckedChanged += (s, ev) =>
+                {
+                    if (checkBox.Checked)
+                    {
+                        if (!Modellist.Items.Contains(modelName))
+                        {
+                            Modellist.Items.Add(modelName);
+                        }
+                    }
+                    else
+                    {
+                        Modellist.Items.Remove(modelName);
+                    }
+                };
+
+
+                modelpictures.Controls.Add(checkBox);
             }
 
             reader.Close();
@@ -123,6 +143,65 @@ namespace Model_Agency_Pack_Software
         }
 
         private void modelpictures_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Modellist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SelectAll_Click(object sender, EventArgs e)
+        {
+            foreach (Control control in modelpictures.Controls)
+            {
+                if (control is CheckBox checkBox)
+                {
+                    checkBox.Checked = true;
+                }
+            }
+        }
+
+        private void DeleteAll_Click(object sender, EventArgs e)
+        {
+            foreach (Control control in modelpictures.Controls)
+            {
+                if (control is CheckBox checkBox && checkBox.Checked)
+                {
+                    checkBox.Checked = false;
+                }
+            }
+
+            List<string> itemsToRemove = new List<string>();
+
+            foreach (var selectedItem in Modellist.SelectedItems.Cast<string>().ToList())
+            {
+                itemsToRemove.Add(selectedItem);
+            }
+
+            foreach (var itemToRemove in itemsToRemove)
+            {
+                Modellist.Items.Remove(itemToRemove);
+            }
+        }
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+            StringBuilder urlBuilder = new StringBuilder("https://pack.reepmodel.com/pack?");
+
+            List<string> modelNames = new List<string>();
+            foreach (var item in Modellist.Items)
+            {
+                modelNames.Add("name[]=" + Uri.EscapeDataString(item.ToString()));
+            }
+
+            urlBuilder.Append(string.Join("&", modelNames));
+
+            textBox1.Text = urlBuilder.ToString();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

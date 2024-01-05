@@ -73,6 +73,7 @@
             Save.TabIndex = 1;
             Save.Text = "Save Selection";
             Save.UseVisualStyleBackColor = false;
+            Save.Click += Save_Click;
             // 
             // Modellist
             // 
@@ -82,6 +83,7 @@
             Modellist.Name = "Modellist";
             Modellist.Size = new Size(284, 602);
             Modellist.TabIndex = 0;
+            Modellist.SelectedIndexChanged += Modellist_SelectedIndexChanged;
             // 
             // textBox1
             // 
@@ -90,6 +92,7 @@
             textBox1.Size = new Size(298, 30);
             textBox1.TabIndex = 1;
             textBox1.Text = "Link Will Be Here";
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // SelectAll
             // 
@@ -106,6 +109,7 @@
             SelectAll.TabIndex = 2;
             SelectAll.Text = "Select All";
             SelectAll.UseVisualStyleBackColor = false;
+            SelectAll.Click += SelectAll_Click;
             // 
             // DeleteAll
             // 
@@ -122,6 +126,7 @@
             DeleteAll.TabIndex = 3;
             DeleteAll.Text = "Delete All";
             DeleteAll.UseVisualStyleBackColor = false;
+            DeleteAll.Click += DeleteAll_Click;
             // 
             // Search
             // 
