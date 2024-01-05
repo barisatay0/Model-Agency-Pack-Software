@@ -22,81 +22,129 @@ namespace Model_Agency_Pack_Software
         private void Modeleditorpage_Load(object sender, EventArgs e)
         {
             string connectionString = "server=127.0.0.1;port=3306;database=pack;user=root;";
-            MySqlConnection connection = new MySqlConnection(connectionString);
+    MySqlConnection connection = new MySqlConnection(connectionString);
 
-            try
+    try
+    {
+        connection.Open();
+        Console.WriteLine("Connected.");
+
+        string selectQuery = "SELECT name, image FROM items";
+        MySqlCommand command = new MySqlCommand(selectQuery, connection);
+        MySqlDataReader reader = command.ExecuteReader();
+
+        int verticalSpacing = 10;
+        int startingHeight = 0;
+
+        while (reader.Read())
+        {
+            string modelName = reader.GetString("name");
+            string imageFileName = reader.GetString("image");
+
+            string imageFilePath = Path.Combine(@"C:\xampp\htdocs\data\", imageFileName);
+
+            PictureBox pictureBox = new PictureBox();
+            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox.Size = new Size(600, 600);
+            pictureBox.Location = new Point(600, startingHeight);
+
+            if (File.Exists(imageFilePath))
             {
-                connection.Open();
-                Console.WriteLine("Connected.");
+                pictureBox.Image = Image.FromFile(imageFilePath);
+            }
+            else
+            {
+                MessageBox.Show("Dosya bulunamadı: " + imageFilePath);
+            }
 
-                string selectQuery = "SELECT name, image FROM items";
-                MySqlCommand command = new MySqlCommand(selectQuery, connection);
-                MySqlDataReader reader = command.ExecuteReader();
+            modelspanel.Controls.Add(pictureBox);
 
-                int verticalSpacing = 10;
-                int startingHeight = 0;
+            Button modelButton = new Button();
+            modelButton.Text = modelName;
+            modelButton.BackColor = Color.Black;
+            modelButton.ForeColor = Color.White;
 
-                while (reader.Read())
+            modelButton.Width = 600;
+            modelButton.Height = 35;
+
+            modelButton.Location = new Point(600, startingHeight + pictureBox.Height);
+            modelButton.Click += (s, ev) =>
+            {
+                string selectedModel = modelName;
+                model modelForm = new model();
+                modelForm.SetModelName(selectedModel);
+                modelForm.Show();
+                this.Hide();
+                modelForm.FormClosed += (s, args) => this.Close();
+            };
+
+            modelspanel.Controls.Add(modelButton);
+
+            Button deleteButton = new Button();
+            deleteButton.Text = "Sil";
+            deleteButton.BackColor = Color.Red;
+            deleteButton.ForeColor = Color.White;
+            deleteButton.Width = 100;
+            deleteButton.Height = 35;
+            deleteButton.Location = new Point(700, startingHeight + pictureBox.Height);
+
+            deleteButton.Click += (s, ev) =>
+            {
+                if (MessageBox.Show("Bu modeli silmek istediğinizden emin misiniz?", "Onay", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    string modelName = reader.GetString("name");
-                    string imageFileName = reader.GetString("image");
-
-                    string imageFilePath = Path.Combine(@"C:\xampp\htdocs\data\", imageFileName);
-
-                    PictureBox pictureBox = new PictureBox();
-                    pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox.Size = new Size(600, 600);
-                    pictureBox.Location = new Point(600, startingHeight);
-
-                    if (File.Exists(imageFilePath))
+                    try
                     {
-                        pictureBox.Image = Image.FromFile(imageFilePath);
+                        string deleteQuery = "DELETE FROM items WHERE name = @modelName";
+                        MySqlCommand deleteCommand = new MySqlCommand(deleteQuery, connection);
+                        deleteCommand.Parameters.AddWithValue("@modelName", modelName);
+
+                        connection.Open();
+                        int rowsAffected = deleteCommand.ExecuteNonQuery();
+                        connection.Close();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Model silindi.");
+                            modelspanel.Controls.Remove(pictureBox);
+                            modelspanel.Controls.Remove(modelButton);
+                            modelspanel.Controls.Remove(deleteButton);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Model silinemedi.");
+                        }
                     }
-                    else
+                    catch (MySqlException ex)
                     {
-                        MessageBox.Show("Dosya bulunamadı: " + imageFilePath);
+                        Console.WriteLine("Database Error: " + ex.Message);
+                        MessageBox.Show("Database Error: " + ex.Message);
                     }
-
-                    modelspanel.Controls.Add(pictureBox);
-
-                    Button modelButton = new Button();
-                    modelButton.Text = modelName;
-                    modelButton.BackColor = Color.Black;
-                    modelButton.ForeColor = Color.White;
-
-                    modelButton.Width = 600;
-                    modelButton.Height = 35;
-
-                    modelButton.Location = new Point(600, startingHeight + pictureBox.Height);
-                    modelButton.Click += (s, ev) =>
+                    catch (Exception ex)
                     {
-                        string selectedModel = modelName;
-                        model modelForm = new model();
-                        modelForm.SetModelName(selectedModel);
-                        modelForm.Show();
-                        this.Hide();
-                        modelForm.FormClosed += (s, args) => this.Close();
-                    };
-
-                    modelspanel.Controls.Add(modelButton);
-
-                    startingHeight = pictureBox.Location.Y + pictureBox.Height + 10;
+                        Console.WriteLine("Error: " + ex.Message);
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
                 }
+            };
 
+            modelspanel.Controls.Add(deleteButton);
 
-                reader.Close();
-                connection.Close();
-            }
-            catch (MySqlException ex)
-            {
-                Console.WriteLine("Database Error: " + ex.Message);
-                MessageBox.Show("Database Error: " + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error: " + ex.Message);
-                MessageBox.Show("Error: " + ex.Message);
-            }
+            startingHeight = pictureBox.Location.Y + pictureBox.Height + 10;
+        }
+
+        reader.Close();
+        connection.Close();
+    }
+    catch (MySqlException ex)
+    {
+        Console.WriteLine("Database Error: " + ex.Message);
+        MessageBox.Show("Database Error: " + ex.Message);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Error: " + ex.Message);
+        MessageBox.Show("Error: " + ex.Message);
+    }
 
         }
         List<string> imageFilePaths = new List<string>();
