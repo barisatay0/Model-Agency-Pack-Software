@@ -183,11 +183,86 @@ namespace Model_Agency_Pack_Software
         private void addbook_Click(object sender, EventArgs e)
         {
 
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files (*.jpg; *.jpeg; *.png; *.bmp)|*.jpg; *.jpeg; *.png; *.bmp";
+            openFileDialog.Multiselect = true;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                foreach (string fileName in openFileDialog.FileNames)
+                {
+                    string photoExtension = System.IO.Path.GetExtension(fileName);
+                    string photoName = Guid.NewGuid().ToString() + photoExtension;
+                    string photoDirectory = @"C:\xampp\htdocs\data\";
+                    string destinationPath = System.IO.Path.Combine(photoDirectory, photoName);
+                    System.IO.File.Copy(fileName, destinationPath, true);
+                    string modelName = Nametext.Text;
+                    string connectionString = "server=127.0.0.1;port=3306;database=pack;user=root;";
+                    MySqlConnection connection = new MySqlConnection(connectionString);
+                    connection.Open();
+
+                    string updateQuery = "UPDATE items SET book = CONCAT(IFNULL(book,''), IF(CHAR_LENGTH(IFNULL(book,'')) > 0, ',', ''), @photoName) WHERE name = @modelName";
+
+
+                    MySqlCommand command = new MySqlCommand(updateQuery, connection);
+                    command.Parameters.AddWithValue("@photoName", photoName);
+                    command.Parameters.AddWithValue("@modelName", modelName);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Book photo successfully added.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to add book photo.");
+                    }
+                }
+            }
+
         }
 
         private void AddDigital_Click(object sender, EventArgs e)
         {
 
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files (*.jpg; *.jpeg; *.png; *.bmp)|*.jpg; *.jpeg; *.png; *.bmp";
+            openFileDialog.Multiselect = true;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                foreach (string fileName in openFileDialog.FileNames)
+                {
+                    string photoExtension = System.IO.Path.GetExtension(fileName);
+                    string photoName = Guid.NewGuid().ToString() + photoExtension;
+                    string photoDirectory = @"C:\xampp\htdocs\data\";
+                    string destinationPath = System.IO.Path.Combine(photoDirectory, photoName);
+                    System.IO.File.Copy(fileName, destinationPath, true);
+                    string modelName = Nametext.Text;
+                    string connectionString = "server=127.0.0.1;port=3306;database=pack;user=root;";
+                    MySqlConnection connection = new MySqlConnection(connectionString);
+                    connection.Open();
+
+                    string updateQuery = "UPDATE items SET digital = CONCAT(IFNULL(digital,''), IF(CHAR_LENGTH(IFNULL(digital,'')) > 0, ',', ''), @photoName) WHERE name = @modelName";
+
+
+                    MySqlCommand command = new MySqlCommand(updateQuery, connection);
+                    command.Parameters.AddWithValue("@photoName", photoName);
+                    command.Parameters.AddWithValue("@modelName", modelName);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Digital photo successfully added.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to add Digital photo.");
+                    }
+                }
+            }
         }
 
         private void Newimagebutton_Click(object sender, EventArgs e)
