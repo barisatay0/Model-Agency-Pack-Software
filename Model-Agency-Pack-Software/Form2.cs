@@ -54,7 +54,7 @@ namespace Model_Agency_Pack_Software
             }
             else
             {
-                MessageBox.Show("Dosya bulunamadı: " + imageFilePath);
+                MessageBox.Show("File not found: " + imageFilePath);
             }
 
             modelspanel.Controls.Add(pictureBox);
@@ -81,7 +81,7 @@ namespace Model_Agency_Pack_Software
             modelspanel.Controls.Add(modelButton);
 
             Button deleteButton = new Button();
-            deleteButton.Text = "Sil";
+            deleteButton.Text = "Delete";
             deleteButton.BackColor = Color.Red;
             deleteButton.ForeColor = Color.White;
             deleteButton.Width = 100;
@@ -90,7 +90,7 @@ namespace Model_Agency_Pack_Software
 
             deleteButton.Click += (s, ev) =>
             {
-                if (MessageBox.Show("Bu modeli silmek istediğinizden emin misiniz?", "Onay", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure ?", "Yes", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     try
                     {
@@ -100,18 +100,17 @@ namespace Model_Agency_Pack_Software
 
                         connection.Open();
                         int rowsAffected = deleteCommand.ExecuteNonQuery();
-                        connection.Close();
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Model silindi.");
+                            MessageBox.Show("Model Deleted.");
                             modelspanel.Controls.Remove(pictureBox);
                             modelspanel.Controls.Remove(modelButton);
                             modelspanel.Controls.Remove(deleteButton);
                         }
                         else
                         {
-                            MessageBox.Show("Model silinemedi.");
+                            MessageBox.Show("Model Couldnt Delete.");
                         }
                     }
                     catch (MySqlException ex)
@@ -124,16 +123,16 @@ namespace Model_Agency_Pack_Software
                         Console.WriteLine("Error: " + ex.Message);
                         MessageBox.Show("Error: " + ex.Message);
                     }
+
                 }
             };
 
             modelspanel.Controls.Add(deleteButton);
 
-            startingHeight = pictureBox.Location.Y + pictureBox.Height + 10;
-        }
+                    startingHeight += pictureBox.Height + modelButton.Height + verticalSpacing;
+                }
 
-        reader.Close();
-        connection.Close();
+                reader.Close();
     }
     catch (MySqlException ex)
     {

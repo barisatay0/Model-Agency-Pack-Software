@@ -40,7 +40,9 @@
             models = new GroupBox();
             fileSystemWatcher1 = new FileSystemWatcher();
             website = new Button();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             modelgroupbox.SuspendLayout();
+            models.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             SuspendLayout();
             // 
@@ -146,6 +148,7 @@
             // 
             // models
             // 
+            models.Controls.Add(flowLayoutPanel1);
             models.Location = new Point(336, 54);
             models.Name = "models";
             models.Size = new Size(1420, 678);
@@ -173,6 +176,13 @@
             website.UseVisualStyleBackColor = false;
             website.Click += website_Click;
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Location = new Point(6, 29);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(1408, 643);
+            flowLayoutPanel1.TabIndex = 0;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
@@ -195,6 +205,7 @@
             Text = "Model";
             Load += Form1_Load;
             modelgroupbox.ResumeLayout(false);
+            models.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -213,5 +224,6 @@
         private GroupBox models;
         private FileSystemWatcher fileSystemWatcher1;
         private Button website;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
