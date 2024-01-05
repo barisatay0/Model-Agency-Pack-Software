@@ -38,9 +38,9 @@
             Search = new TextBox();
             modeleditor = new Button();
             models = new GroupBox();
+            modelpictures = new FlowLayoutPanel();
             fileSystemWatcher1 = new FileSystemWatcher();
             website = new Button();
-            flowLayoutPanel1 = new FlowLayoutPanel();
             modelgroupbox.SuspendLayout();
             models.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
@@ -131,6 +131,7 @@
             Search.Size = new Size(326, 33);
             Search.TabIndex = 4;
             Search.Text = "Search";
+            Search.TextChanged += Search_TextChanged;
             // 
             // modeleditor
             // 
@@ -148,7 +149,7 @@
             // 
             // models
             // 
-            models.Controls.Add(flowLayoutPanel1);
+            models.Controls.Add(modelpictures);
             models.Location = new Point(336, 54);
             models.Name = "models";
             models.Size = new Size(1420, 678);
@@ -156,6 +157,14 @@
             models.TabStop = false;
             models.Text = "Models";
             models.Enter += models_Enter;
+            // 
+            // modelpictures
+            // 
+            modelpictures.Location = new Point(6, 29);
+            modelpictures.Name = "modelpictures";
+            modelpictures.Size = new Size(1408, 643);
+            modelpictures.TabIndex = 0;
+            modelpictures.Paint += modelpictures_Paint;
             // 
             // fileSystemWatcher1
             // 
@@ -175,13 +184,6 @@
             website.Text = "Website";
             website.UseVisualStyleBackColor = false;
             website.Click += website_Click;
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.Location = new Point(6, 29);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1408, 643);
-            flowLayoutPanel1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -224,6 +226,6 @@
         private GroupBox models;
         private FileSystemWatcher fileSystemWatcher1;
         private Button website;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel modelpictures;
     }
 }

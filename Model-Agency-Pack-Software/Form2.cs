@@ -64,10 +64,10 @@ namespace Model_Agency_Pack_Software
             modelButton.BackColor = Color.Black;
             modelButton.ForeColor = Color.White;
 
-            modelButton.Width = 600;
+            modelButton.Width = 400;
             modelButton.Height = 35;
 
-            modelButton.Location = new Point(600, startingHeight + pictureBox.Height);
+            modelButton.Location = new Point(500, startingHeight + pictureBox.Height);
             modelButton.Click += (s, ev) =>
             {
                 string selectedModel = modelName;
@@ -84,9 +84,9 @@ namespace Model_Agency_Pack_Software
             deleteButton.Text = "Delete";
             deleteButton.BackColor = Color.Red;
             deleteButton.ForeColor = Color.White;
-            deleteButton.Width = 100;
+            deleteButton.Width = 400;
             deleteButton.Height = 35;
-            deleteButton.Location = new Point(700, startingHeight + pictureBox.Height);
+            deleteButton.Location = new Point(900, startingHeight + pictureBox.Height);
 
             deleteButton.Click += (s, ev) =>
             {
@@ -97,8 +97,6 @@ namespace Model_Agency_Pack_Software
                         string deleteQuery = "DELETE FROM items WHERE name = @modelName";
                         MySqlCommand deleteCommand = new MySqlCommand(deleteQuery, connection);
                         deleteCommand.Parameters.AddWithValue("@modelName", modelName);
-
-                        connection.Open();
                         int rowsAffected = deleteCommand.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
