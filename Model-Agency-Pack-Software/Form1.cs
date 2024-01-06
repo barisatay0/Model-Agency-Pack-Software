@@ -188,18 +188,32 @@ namespace Model_Agency_Pack_Software
 
         private void Save_Click(object sender, EventArgs e)
         {
-            StringBuilder urlBuilder = new StringBuilder("https://pack.reepmodel.com/pack?");
+            StringBuilder urlBuilder = new StringBuilder("localhost/pack.php?");
+            List<string> modelIds = new List<string>();
+            string connectionString = "server=127.0.0.1;port=3306;database=pack;user=root;";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            connection.Open();
 
-            List<string> modelNames = new List<string>();
             foreach (var item in Modellist.Items)
             {
-                modelNames.Add("name[]=" + Uri.EscapeDataString(item.ToString()));
+                string modelName = item.ToString();
+                string selectQuery = "SELECT id FROM items WHERE name = @modelName";
+                MySqlCommand idCommand = new MySqlCommand(selectQuery, connection);
+                idCommand.Parameters.AddWithValue("@modelName", modelName);
+                var idReader = idCommand.ExecuteReader();
+
+                if (idReader.Read())
+                {
+                    string modelId = idReader["id"].ToString();
+                    modelIds.Add($"id[]={modelId}");
+                }
+
+                idReader.Close();
             }
-
-            urlBuilder.Append(string.Join("&", modelNames));
-
-            textBox1.Text = urlBuilder.ToString();
+            textBox1.Text = "localhost/pack.php?" + string.Join("&", modelIds);
         }
+
+    
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
