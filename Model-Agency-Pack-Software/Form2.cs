@@ -22,126 +22,126 @@ namespace Model_Agency_Pack_Software
         private void Modeleditorpage_Load(object sender, EventArgs e)
         {
             string connectionString = "server=127.0.0.1;port=3306;database=pack;user=root;";
-    MySqlConnection connection = new MySqlConnection(connectionString);
+            MySqlConnection connection = new MySqlConnection(connectionString);
 
-    try
-    {
-        connection.Open();
-        Console.WriteLine("Connected.");
-
-        string selectQuery = "SELECT name, image FROM items";
-        MySqlCommand command = new MySqlCommand(selectQuery, connection);
-        MySqlDataReader reader = command.ExecuteReader();
-
-        int verticalSpacing = 10;
-        int startingHeight = 0;
-
-        while (reader.Read())
-        {
-            string modelName = reader.GetString("name");
-            string imageFileName = reader.GetString("image");
-
-            string imageFilePath = Path.Combine(@"C:\xampp\htdocs\data\", imageFileName);
-
-            PictureBox pictureBox = new PictureBox();
-            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox.Size = new Size(600, 600);
-            pictureBox.Location = new Point(600, startingHeight);
-
-            if (File.Exists(imageFilePath))
+            try
             {
-                pictureBox.Image = Image.FromFile(imageFilePath);
-            }
-            else
-            {
-                MessageBox.Show("File not found: " + imageFilePath);
-            }
+                connection.Open();
+                Console.WriteLine("Connected.");
 
-            modelspanel.Controls.Add(pictureBox);
+                string selectQuery = "SELECT name, image FROM items";
+                MySqlCommand command = new MySqlCommand(selectQuery, connection);
+                MySqlDataReader reader = command.ExecuteReader();
 
-            Button modelButton = new Button();
-            modelButton.Text = modelName;
-            modelButton.BackColor = Color.Black;
-            modelButton.ForeColor = Color.White;
+                int verticalSpacing = 10;
+                int startingHeight = 0;
 
-            modelButton.Width = 400;
-            modelButton.Height = 35;
-
-            modelButton.Location = new Point(500, startingHeight + pictureBox.Height);
-            modelButton.Click += (s, ev) =>
-            {
-                string selectedModel = modelName;
-                model modelForm = new model();
-                modelForm.SetModelName(selectedModel);
-                modelForm.Show();
-                this.Hide();
-                modelForm.FormClosed += (s, args) => this.Close();
-            };
-
-            modelspanel.Controls.Add(modelButton);
-
-            Button deleteButton = new Button();
-            deleteButton.Text = "Delete";
-            deleteButton.BackColor = Color.Red;
-            deleteButton.ForeColor = Color.White;
-            deleteButton.Width = 400;
-            deleteButton.Height = 35;
-            deleteButton.Location = new Point(900, startingHeight + pictureBox.Height);
-
-            deleteButton.Click += (s, ev) =>
-            {
-                if (MessageBox.Show("Are you sure ?", "Yes", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                while (reader.Read())
                 {
-                    try
-                    {
-                        string deleteQuery = "DELETE FROM items WHERE name = @modelName";
-                        MySqlCommand deleteCommand = new MySqlCommand(deleteQuery, connection);
-                        deleteCommand.Parameters.AddWithValue("@modelName", modelName);
-                        int rowsAffected = deleteCommand.ExecuteNonQuery();
+                    string modelName = reader.GetString("name");
+                    string imageFileName = reader.GetString("image");
 
-                        if (rowsAffected > 0)
+                    string imageFilePath = Path.Combine(@"C:\xampp\htdocs\data\", imageFileName);
+
+                    PictureBox pictureBox = new PictureBox();
+                    pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox.Size = new Size(600, 600);
+                    pictureBox.Location = new Point(600, startingHeight);
+
+                    if (File.Exists(imageFilePath))
+                    {
+                        pictureBox.Image = Image.FromFile(imageFilePath);
+                    }
+                    else
+                    {
+                        MessageBox.Show("File not found: " + imageFilePath);
+                    }
+
+                    modelspanel.Controls.Add(pictureBox);
+
+                    Button modelButton = new Button();
+                    modelButton.Text = modelName;
+                    modelButton.BackColor = Color.Black;
+                    modelButton.ForeColor = Color.White;
+
+                    modelButton.Width = 275;
+                    modelButton.Height = 35;
+
+                    modelButton.Location = new Point(620, startingHeight + pictureBox.Height);
+                    modelButton.Click += (s, ev) =>
+                    {
+                        string selectedModel = modelName;
+                        model modelForm = new model();
+                        modelForm.SetModelName(selectedModel);
+                        modelForm.Show();
+                        this.Hide();
+                        modelForm.FormClosed += (s, args) => this.Close();
+                    };
+
+                    modelspanel.Controls.Add(modelButton);
+
+                    Button deleteButton = new Button();
+                    deleteButton.Text = "Delete";
+                    deleteButton.BackColor = Color.Red;
+                    deleteButton.ForeColor = Color.White;
+                    deleteButton.Width = 275;
+                    deleteButton.Height = 35;
+                    deleteButton.Location = new Point(900, startingHeight + pictureBox.Height);
+
+                    deleteButton.Click += (s, ev) =>
+                    {
+                        if (MessageBox.Show("Are you sure ?", "Yes", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
-                            MessageBox.Show("Model Deleted.");
-                            modelspanel.Controls.Remove(pictureBox);
-                            modelspanel.Controls.Remove(modelButton);
-                            modelspanel.Controls.Remove(deleteButton);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Model Couldnt Delete.");
-                        }
-                    }
-                    catch (MySqlException ex)
-                    {
-                        Console.WriteLine("Database Error: " + ex.Message);
-                        MessageBox.Show("Database Error: " + ex.Message);
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("Error: " + ex.Message);
-                        MessageBox.Show("Error: " + ex.Message);
-                    }
+                            try
+                            {
+                                string deleteQuery = "DELETE FROM items WHERE name = @modelName";
+                                MySqlCommand deleteCommand = new MySqlCommand(deleteQuery, connection);
+                                deleteCommand.Parameters.AddWithValue("@modelName", modelName);
+                                int rowsAffected = deleteCommand.ExecuteNonQuery();
 
-                }
-            };
+                                if (rowsAffected > 0)
+                                {
+                                    MessageBox.Show("Model Deleted.");
+                                    modelspanel.Controls.Remove(pictureBox);
+                                    modelspanel.Controls.Remove(modelButton);
+                                    modelspanel.Controls.Remove(deleteButton);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Model Couldnt Delete.");
+                                }
+                            }
+                            catch (MySqlException ex)
+                            {
+                                Console.WriteLine("Database Error: " + ex.Message);
+                                MessageBox.Show("Database Error: " + ex.Message);
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("Error: " + ex.Message);
+                                MessageBox.Show("Error: " + ex.Message);
+                            }
 
-            modelspanel.Controls.Add(deleteButton);
+                        }
+                    };
+
+                    modelspanel.Controls.Add(deleteButton);
 
                     startingHeight += pictureBox.Height + modelButton.Height + verticalSpacing;
                 }
 
                 reader.Close();
-    }
-    catch (MySqlException ex)
-    {
-        Console.WriteLine("Database Error: " + ex.Message);
-        MessageBox.Show("Database Error: " + ex.Message);
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine("Error: " + ex.Message);
-        MessageBox.Show("Error: " + ex.Message);
-    }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Database Error: " + ex.Message);
+                MessageBox.Show("Database Error: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
+            }
 
         }
         List<string> imageFilePaths = new List<string>();
@@ -156,7 +156,7 @@ namespace Model_Agency_Pack_Software
         private void imagebutton_Click(object sender, EventArgs e)
         {
             OpenFileDialog imageDialog = new OpenFileDialog();
-            imageDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp"; 
+            imageDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
             imageDialog.Title = "Select Image Files";
             imageDialog.Multiselect = true;
 
@@ -164,7 +164,7 @@ namespace Model_Agency_Pack_Software
             {
                 foreach (string fileName in imageDialog.FileNames)
                 {
-                    string uniqueName = Guid.NewGuid().ToString(); 
+                    string uniqueName = Guid.NewGuid().ToString();
                     string fileExtension = Path.GetExtension(fileName);
 
                     string destinationPath = @"C:\xampp\htdocs\data\" + uniqueName + fileExtension;
@@ -216,8 +216,8 @@ namespace Model_Agency_Pack_Software
             {
                 foreach (string fileName in digitalDialog.FileNames)
                 {
-                    string uniqueName = Guid.NewGuid().ToString(); 
-                    string fileExtension = Path.GetExtension(fileName); 
+                    string uniqueName = Guid.NewGuid().ToString();
+                    string fileExtension = Path.GetExtension(fileName);
 
                     string destinationPath = @"C:\xampp\htdocs\data\" + uniqueName + fileExtension;
 
@@ -233,7 +233,7 @@ namespace Model_Agency_Pack_Software
         private void Videobutton_Click(object sender, EventArgs e)
         {
             OpenFileDialog videoDialog = new OpenFileDialog();
-            videoDialog.Filter = "Video Files|*.mp4;*.wmv;*.wm;*.mov;*.mov"; 
+            videoDialog.Filter = "Video Files|*.mp4;*.wmv;*.wm;*.mov;*.mov";
             videoDialog.Title = "Select Video Files";
             videoDialog.Multiselect = true;
 
@@ -242,7 +242,7 @@ namespace Model_Agency_Pack_Software
                 foreach (string fileName in videoDialog.FileNames)
                 {
                     string uniqueName = Guid.NewGuid().ToString();
-                    string fileExtension = Path.GetExtension(fileName); 
+                    string fileExtension = Path.GetExtension(fileName);
 
                     string destinationPath = @"C:\xampp\htdocs\data\" + uniqueName + fileExtension;
 
@@ -250,7 +250,7 @@ namespace Model_Agency_Pack_Software
                     Console.WriteLine("File copied to: " + destinationPath);
 
                     videoFilePaths.Add(destinationPath);
-                    uniqueVideoNames.Add(uniqueName + fileExtension); 
+                    uniqueVideoNames.Add(uniqueName + fileExtension);
                 }
             }
         }

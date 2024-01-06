@@ -32,88 +32,89 @@ namespace Model_Agency_Pack_Software
             form1.FormClosed += (s, args) => this.Close();
         }
         public void SetModelName(string modelName)
-        { MessageBox.Show("Selected model: " + modelName);
-    string connectionString = "server=127.0.0.1;port=3306;database=pack;user=root;";
-    MySqlConnection connection = new MySqlConnection(connectionString);
-    connection.Open();
-    string selectQuery = "SELECT * FROM items WHERE name = @modelName";
-    MySqlCommand command = new MySqlCommand(selectQuery, connection);
-    command.Parameters.AddWithValue("@modelName", modelName);
-
-    using (MySqlDataReader reader = command.ExecuteReader())
-    {
-        if (reader.Read())
         {
-            if (!reader.IsDBNull(reader.GetOrdinal("name")))
+            MessageBox.Show("Selected model: " + modelName);
+            string connectionString = "server=127.0.0.1;port=3306;database=pack;user=root;";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            connection.Open();
+            string selectQuery = "SELECT * FROM items WHERE name = @modelName";
+            MySqlCommand command = new MySqlCommand(selectQuery, connection);
+            command.Parameters.AddWithValue("@modelName", modelName);
+
+            using (MySqlDataReader reader = command.ExecuteReader())
             {
-                Nametext.Text = reader["name"].ToString();
-                Heighttext.Text = reader["height"].ToString();
-                Chesttext.Text = reader["chest"].ToString();
-                Waisttext.Text = reader["waist"].ToString();
-                Hipstext.Text = reader["hips"].ToString();
-                Shoestext.Text = reader["shoes"].ToString();
-                Eyestext.Text = reader["eyes"].ToString();
-                Nametext.ReadOnly = true;
-
-                string bookPhotos = reader["book"].ToString();
-                string digitalPhotos = reader["digital"].ToString();
-
-                if (!string.IsNullOrEmpty(bookPhotos))
+                if (reader.Read())
                 {
-                    string[] bookPhotoList = bookPhotos.Split(',');
-                    string photoDirectory = @"C:\xampp\htdocs\data\";
-                    int pictureBoxHeight = 100;
-                    int spacing = 10;
-                    int currentY = 0;
-
-                    bookpanel.Controls.Clear();
-                    foreach (string photoName in bookPhotoList)
+                    if (!reader.IsDBNull(reader.GetOrdinal("name")))
                     {
-                        PictureBox pb = new PictureBox();
-                        pb.Image = Image.FromFile(System.IO.Path.Combine(photoDirectory, photoName.Trim()));
-                        pb.SizeMode = PictureBoxSizeMode.Zoom;
-                        pb.Height = pictureBoxHeight;
-                        pb.Width = bookpanel.Width - 50;
-                        pb.Location = new Point(0, currentY);
+                        Nametext.Text = reader["name"].ToString();
+                        Heighttext.Text = reader["height"].ToString();
+                        Chesttext.Text = reader["chest"].ToString();
+                        Waisttext.Text = reader["waist"].ToString();
+                        Hipstext.Text = reader["hips"].ToString();
+                        Shoestext.Text = reader["shoes"].ToString();
+                        Eyestext.Text = reader["eyes"].ToString();
+                        Nametext.ReadOnly = true;
 
-                        bookpanel.Controls.Add(pb);
-                        currentY += pictureBoxHeight + spacing;
+                        string bookPhotos = reader["book"].ToString();
+                        string digitalPhotos = reader["digital"].ToString();
+
+                        if (!string.IsNullOrEmpty(bookPhotos))
+                        {
+                            string[] bookPhotoList = bookPhotos.Split(',');
+                            string photoDirectory = @"C:\xampp\htdocs\data\";
+                            int pictureBoxHeight = 100;
+                            int spacing = 10;
+                            int currentY = 0;
+
+                            bookpanel.Controls.Clear();
+                            foreach (string photoName in bookPhotoList)
+                            {
+                                PictureBox pb = new PictureBox();
+                                pb.Image = Image.FromFile(System.IO.Path.Combine(photoDirectory, photoName.Trim()));
+                                pb.SizeMode = PictureBoxSizeMode.Zoom;
+                                pb.Height = pictureBoxHeight;
+                                pb.Width = bookpanel.Width - 50;
+                                pb.Location = new Point(0, currentY);
+
+                                bookpanel.Controls.Add(pb);
+                                currentY += pictureBoxHeight + spacing;
+                            }
+                        }
+
+                        if (!string.IsNullOrEmpty(digitalPhotos))
+                        {
+                            string[] digitalPhotoList = digitalPhotos.Split(',');
+                            string photoDirectory = @"C:\xampp\htdocs\data\";
+                            int pictureBoxHeight = 100;
+                            int spacing = 10;
+                            int currentY = 0;
+
+                            digitalpanel.Controls.Clear();
+                            foreach (string photoName in digitalPhotoList)
+                            {
+                                PictureBox pb = new PictureBox();
+                                pb.Image = Image.FromFile(System.IO.Path.Combine(photoDirectory, photoName.Trim()));
+                                pb.SizeMode = PictureBoxSizeMode.Zoom;
+                                pb.Height = pictureBoxHeight;
+                                pb.Width = digitalpanel.Width - 50;
+                                pb.Location = new Point(0, currentY);
+
+                                digitalpanel.Controls.Add(pb);
+                                currentY += pictureBoxHeight + spacing;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Model name column is empty.");
                     }
                 }
-
-                if (!string.IsNullOrEmpty(digitalPhotos))
+                else
                 {
-                    string[] digitalPhotoList = digitalPhotos.Split(',');
-                    string photoDirectory = @"C:\xampp\htdocs\data\";
-                    int pictureBoxHeight = 100;
-                    int spacing = 10;
-                    int currentY = 0;
-
-                    digitalpanel.Controls.Clear();
-                    foreach (string photoName in digitalPhotoList)
-                    {
-                        PictureBox pb = new PictureBox();
-                        pb.Image = Image.FromFile(System.IO.Path.Combine(photoDirectory, photoName.Trim()));
-                        pb.SizeMode = PictureBoxSizeMode.Zoom;
-                        pb.Height = pictureBoxHeight;
-                        pb.Width = digitalpanel.Width - 50;
-                        pb.Location = new Point(0, currentY);
-
-                        digitalpanel.Controls.Add(pb);
-                        currentY += pictureBoxHeight + spacing;
-                    }
+                    MessageBox.Show("Model not found.");
                 }
             }
-            else
-            {
-                MessageBox.Show("Model name column is empty.");
-            }
-        }
-        else
-        {
-            MessageBox.Show("Model not found.");
-        }
-    }
         }
 
         private void Eyestext_TextChanged(object sender, EventArgs e)
@@ -203,7 +204,7 @@ namespace Model_Agency_Pack_Software
             {
                 foreach (string fileName in openFileDialog.FileNames)
                 {
-                      string photoExtension = System.IO.Path.GetExtension(fileName);
+                    string photoExtension = System.IO.Path.GetExtension(fileName);
                     string photoName = Guid.NewGuid().ToString() + photoExtension;
                     string photoDirectory = @"C:\xampp\htdocs\data\";
                     string destinationPath = System.IO.Path.Combine(photoDirectory, photoName);

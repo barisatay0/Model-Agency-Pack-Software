@@ -209,7 +209,8 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form1";
-            Text = "Model";
+            SizeGripStyle = SizeGripStyle.Show;
+            Text = "Reep Model";
             Load += Form1_Load;
             modelgroupbox.ResumeLayout(false);
             models.ResumeLayout(false);

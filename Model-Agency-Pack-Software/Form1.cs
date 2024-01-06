@@ -139,7 +139,50 @@ namespace Model_Agency_Pack_Software
 
         private void Search_TextChanged(object sender, EventArgs e)
         {
+            string searchKeyword = Search.Text.Trim(); 
+            if (string.IsNullOrEmpty(searchKeyword))
+            {
+                foreach (Control control in modelpictures.Controls)
+                {
+                    control.Visible = true;
+                }
+            }
+            else
+            {
+                foreach (Control control in modelpictures.Controls)
+                {
+                    if (control is Label label) 
+                    {
+                        string modelName = label.Text;
+                        if (modelName.ToLower().Contains(searchKeyword.ToLower()))
+                        {
+                            int pictureBoxIndex = control.TabIndex + 1;
+                            int checkBoxIndex = control.TabIndex + 2;
+                            control.Visible = true;
+                            if (pictureBoxIndex < control.Parent.Controls.Count &&
+                checkBoxIndex < control.Parent.Controls.Count)
+                            {
+                                control.Parent.Controls[pictureBoxIndex].Visible = true;
+                                control.Parent.Controls[checkBoxIndex].Visible = true;
+                            }
+                        }
+                        else
+                        {
+                            control.Visible = false;
 
+                            int pictureBoxIndex = control.TabIndex + 1;
+                            int checkBoxIndex = control.TabIndex + 2;
+
+                            if (pictureBoxIndex < control.Parent.Controls.Count &&
+                                checkBoxIndex < control.Parent.Controls.Count)
+                            {
+                                control.Parent.Controls[pictureBoxIndex].Visible = false;
+                                control.Parent.Controls[checkBoxIndex].Visible = false; 
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private void modelpictures_Paint(object sender, PaintEventArgs e)
@@ -213,7 +256,7 @@ namespace Model_Agency_Pack_Software
             textBox1.Text = "localhost/pack.php?" + string.Join("&", modelIds);
         }
 
-    
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {

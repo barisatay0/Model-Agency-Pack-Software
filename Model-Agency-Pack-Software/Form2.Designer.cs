@@ -414,7 +414,7 @@
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
             Name = "Modeleditorpage";
-            Text = "Editor Page";
+            Text = "Reep Model ";
             Load += Modeleditorpage_Load;
             Uploadmodel.ResumeLayout(false);
             Uploadmodel.PerformLayout();

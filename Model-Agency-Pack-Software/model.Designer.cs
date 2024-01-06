@@ -329,7 +329,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "model";
-            Text = "model";
+            Text = "Reep Model";
             modelfeatures.ResumeLayout(false);
             modelfeatures.PerformLayout();
             bookgroup.ResumeLayout(false);
